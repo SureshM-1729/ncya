@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login</title>
+<link rel="stylesheet" href="login.css">
+<link rel="import" href="ncya.html">
+</head>
+<body>
+	<div class="wrapper">
+        <div class="logo">
+            <img src=".\Images\temple.jpg" alt="">
+        </div>
+        <div class="heading">
+            <h2>NCYA</h2>
+        </div>
+        <form  name="myform" class="p-3 mt-3" action="ncya.html" onsubmit="return validateform()">
+            <div class="form-field d-flex align-items-center">
+                <span class="far fa-user"></span>
+                <input type="text" name="userName" id="userName" placeholder="Username" maxlength="4" onkeypress="return (event.charCode > 64 && 
+					event.charCode < 91) || (event.charCode > 96 && event.charCode < 123 || 
+                    event.charCode == 32)" required>
+            </div>
+            <div class="form-field d-flex align-items-center">
+                <span class="fas fa-key"></span>
+                <input type="password" name="password" id="password" placeholder="Password" maxlength="4"
+						onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode === 8 || event.charCode === 46" required>
+            </div>
+            <button class="btn mt-3">Login</button>
+        </form>
+        <!-- <div class="text-center fs-6">
+            <a href="#">Forget password?</a> or <a href="#">Sign up</a>
+            <h3>Nava Chaithanya Yuvajana Association</h3>
+        </div> -->
+    </div>
+</body>
+<script> 
+
+function validateform(){ 
+var userId=document.myform.userName.value; 
+var password=document.myform.password.value; 
+var password1="1234";
+var userId1="ncya";
+
+if (userId==null || userId=="" || userId.length !=4){ 
+ alert(" Please enter a valid user Id");
+ return false;
+}
+if (userId!=userId1){ 
+	 alert(" Entered user Id does not matched");
+	 return false;
+	}
+if (password!=password1){ 
+	alert(" Entered password does not matched");
+	return false;
+}
+	return true;
+}
+</script>
+</html>
