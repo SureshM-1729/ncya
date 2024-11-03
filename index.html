@@ -18,23 +18,16 @@
         <form name="myform" action="ncya.html" onsubmit="return validateform()">
             <div class="form-field">
                 <i class="fas fa-user"></i>
-               <!--  onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123 || event.charCode == 32)" required -->
-                <input type="text" name="userName" id="userName" placeholder="Username" maxlength="4" required>
+                <input type="text" name="userName" id="userName" placeholder="Username" maxlength="4" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123 || event.charCode == 32)" required>
             </div>
             <div class="form-field">
                 <i class="fas fa-key"></i>
-                <!-- onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode === 8 || event.charCode === 46" -->
-                <input type="password" name="password" id="password" placeholder="Password" maxlength="4" required>
+                <input type="password" name="password" id="password" placeholder="Password" maxlength="4" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode === 8 || event.charCode === 46" required>
             </div>
             <button class="btn" type="submit">Login</button>
         </form>
     </div>
     <script>
-    document.getElementById('userName').addEventListener('input', function() {
-        if (this.value.length > 4) {
-            this.value = this.value.slice(0, 4);
-        }
-    });
         function validateform() {
             var userId = document.myform.userName.value;
             var password = document.myform.password.value;
