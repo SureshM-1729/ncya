@@ -9,9 +9,10 @@
         .page {
             max-width: 1200px;
             margin: auto;
+            
         }
         header {
-            background: #ffffff;
+            background: #fee0f9;
             color: #fff;
             padding: 20px 0;
             text-align: center;
@@ -143,30 +144,6 @@ img {vertical-align: middle;height:300px}
 
 .scrollable-dropdown li {
     white-space: nowrap; /* Prevent text from wrapping */
-}
-
-.search-barr {
-    display: flex;
-    flex: 1;
-    margin: 0 20px;
-   
-}
-
-.search-barr input {
-    width: 50%;
-    padding: 10px ;
-    border: none;
-    border-radius: 4px 0 0 4px;
-    font-size: 16px;
-}
-
-.search-barr button {
-    padding: 10px;
-    border: none;
-    background-color: #00ff00;
-    color: #000;
-    border-radius: 0 4px 4px 0;
-    cursor: pointer;
 }
 
 
