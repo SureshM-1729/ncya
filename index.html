@@ -24,12 +24,17 @@
             <div class="form-field">
                 <i class="fas fa-key"></i>
                 <!-- onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode === 8 || event.charCode === 46" -->
-                <input type="password" name="password" id="password" placeholder="Password" maxlength="4"  required>
+                <input type="password" name="password" id="password" placeholder="Password" maxlength="4" required>
             </div>
             <button class="btn" type="submit">Login</button>
         </form>
     </div>
     <script>
+    document.getElementById('userName').addEventListener('input', function() {
+        if (this.value.length > 4) {
+            this.value = this.value.slice(0, 4);
+        }
+    });
         function validateform() {
             var userId = document.myform.userName.value;
             var password = document.myform.password.value;
