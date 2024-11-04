@@ -3,8 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>N C Y A	</title>
-    <link rel="icon" type="image/x-icon" href="assets\favicon\temple.ico">
+    <title>Mythical University</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     <link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script crossorigin="anonymous"
+	src="https://kit.fontawesome.com/70a642cd7c.js"></script>
+	<link rel="stylesheet" tyep="text/css" href="style.css" />
+	<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script crossorigin="anonymous"
+	src="https://kit.fontawesome.com/70a642cd7c.js"></script>
+	<link rel="icon" type="image/x-icon" href="assets\favicon\temple.ico">
     <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script crossorigin="anonymous"
@@ -14,8 +25,268 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script crossorigin="anonymous"
 	src="https://kit.fontawesome.com/70a642cd7c.js"></script>
-	</head>
-<header class="page">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #0056b3;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        nav {
+            background: #333;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping for smaller screens */
+        }
+        nav ul li {
+            position: relative;
+        }
+        nav ul li a {
+            display: block;
+            color: #fff;
+            padding: 15px 20px;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background: #575757;
+        }
+        .main {
+            padding: 20px;
+            background: #fff;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #0056b3;
+            color: #fff;
+        }
+        .slideshow-container {
+            max-width: 1000px;
+            margin: auto;
+        }
+        .mySlides {
+            display: none;
+        }
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+        .active {
+            background-color: #717171;
+        }
+        @media only screen and (max-width: 600px) {
+            header {
+                padding: 15px 0;
+            }
+            nav ul {
+                flex-direction: column; /* Stack the nav items vertically */
+            }
+            nav ul li a {
+                padding: 10px 15px; /* Adjust padding for mobile */
+            }
+        }
+        .page {
+            max-width: 1513px;
+            margin: auto;
+        }
+        header {
+            background: #0056b3;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        nav {
+            background: #333;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        nav ul li {
+            position: relative;
+        }
+        nav ul li a {
+            display: block;
+            color: #fff;
+            padding: 15px 20px;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background: #575757;
+        }
+        nav ul ul {
+            display: none;
+            position: absolute;
+            left: 0; /* Default left alignment */
+            top: 100%;
+            background: #333;
+        }
+        nav ul li:hover > ul {
+            display: block;
+        }
+        /* Styles for right submenu */
+        nav ul li ul ul {
+            left: 100%; /* Shift to the right */
+            top: 0; /* Align top with parent */
+        }
+        .main {
+            padding: 20px;
+            background: #fff;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #0056b3;
+            color: #fff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        a {
+    color: white; /* Changes the text color of the hyperlink to white */
+    text-decoration: none;
+    
+    
+}
+
+/* Optional: Change the color on hover */
+a:hover {
+    color: white; /* Optional hover effect */
+}
+        
+        /* SLIDE SHOW GALLERY SURESH */
+        * {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1500px;
+  height : 500px;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
+input[type="text"] {
+    text-align: left; /* Options: left, center, right */
+    padding: 10px; /* Optional: add some padding for better spacing */
+    width: 100%; /* Optional: makes the input take the full width of its container */
+    box-sizing: border-box; /* Ensures padding is included in the total width */
+}
+nav ul ul {
+    display: none; /* Initially hide the dropdowns */
+    position: absolute; /* Position them absolutely */
+    left: 0; /* Align to the left of the parent */
+    top: 100%; /* Position below the parent */
+    background: #333; /* Background color for dropdowns */
+    z-index: 1000; /* Ensure dropdowns appear above other elements */
+}
+
+nav ul li:hover > ul {
+    display: block; /* Show the dropdown on hover */
+}
+
+header {
+    background: #0056b3;
+    color: #fff;
+    padding: 5px 0;
+}
+
+.header-content {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center items vertically */
+    max-width: 1300px; /* Limit header width */
+    margin: auto; /* Center the header */
+}
+
+.header-image {
+    width: 100px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.header-text {
+    text-align: center; /* Center text in the middle */
+    flex-grow: 1; /* Allow the text to take up remaining space */
+}
+
+    </style>
+</head>
+
+<header class="page" style="display: flex; justify-content: space-between;>
 		<div class="header-topp">
 			<div class="header-top-left">
 
@@ -25,24 +296,89 @@
             <strong >Welcome to N C Y A! Check out our latest updates and more.</strong>
         	</div>
 			<div class="header-top-right">
-				<a href="ncya.html" class="link">Help</a> 
+				<a href="ncya.html" class="link">Help</a> &nbsp;&nbsp;
 				<a href="index.html" class="link">Logout</a>
 			</div>
 		</div>
 	</header>
 <body>
-    <div class="page">
-    <header role="banner" style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background-color: white; color: blue;">
+  
+<header role="banner" style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background-color: blue; color: blue;border: 3px solid white;
+">
     <div class="header-image" style="flex-shrink: 0;">
         <img src="assets\Images\temple.jpg" alt="Description of image" style="height: 50px; width: auto; border-radius: 30px;">
     </div>
-    <div class="title" style="flex: 2; text-align: center; font-size: 24px; color: blue;">NAVA CHAITHANYA YUVAJANA ASSOCIATION</div>
+    
+    <div class="title" style="flex: 2; text-align: center; font-size: 24px; color: white;">NAVA CHAITHANYA YUVAJANA ASSOCIATION</div>
     <div class="header-image" style="flex-shrink: 0;">
         <img src="assets\Images\ncyaLogo.jpg" alt="Description of image" style="height: 50px; width: auto; border-radius: 60px;">
     </div>
 </header>
-        <nav aria-label="navbar">
-            <ul class="menubar-navigation" role="menubar" style="overflow-x: auto; white-space: nowrap;">
+
+     <!-- <nav aria-label="Mythical University">
+            <ul class="menubar-navigation" role="menubar">
+                <li role="none"><a role="menuitem" href="#home">Home</a></li>
+                
+                <li role="none">
+                    <a role="menuitem" aria-haspopup="true" href="#about">About</a>
+                    <ul role="menu" aria-label="About">
+                        <li role="none"><a role="menuitem" href="#overview">Overview</a></li>
+                        <li role="none"><a role="menuitem" href="#administration">Administration</a></li>
+                        <li role="none">
+                            <a role="menuitem" aria-haspopup="true" href="#facts">Facts</a>
+                            <ul role="menu" aria-label="Facts">
+                                <li role="none"><a role="menuitem" href="#history">History</a></li>
+                                <li role="none"><a role="menuitem" href="#current-statistics">Current Statistics</a></li>
+                                <li role="none"><a role="menuitem" href="#awards">Awards</a></li>
+                            </ul>
+                        </li>
+                        <li role="none">
+                            <a role="menuitem" aria-haspopup="true" href="#campus-tours">Campus Tours</a>
+                            <ul role="menu" aria-label="Campus Tours">
+                                <li role="none"><a role="menuitem" href="#for-prospective-students">For Prospective Students</a></li>
+                                <li role="none"><a role="menuitem" href="#for-alumni">For Alumni</a></li>
+                                <li role="none"><a role="menuitem" href="#for-visitors">For Visitors</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li role="none">
+                    <a role="menuitem" aria-haspopup="true" href="#admissions">Admissions</a>
+                    <ul role="menu" aria-label="Admissions">
+                        <li role="none"><a role="menuitem" href="#apply">Apply</a></li>
+                        <li role="none">
+                            <a role="menuitem" aria-haspopup="true" href="#tuition">Tuition</a>
+                            <ul role="menu" aria-label="Tuition">
+                                <li role="none"><a role="menuitem" href="#undergraduate">Undergraduate</a></li>
+                                <li role="none"><a role="menuitem" href="#graduate">Graduate</a></li>
+                                <li role="none"><a role="menuitem" href="#professional-schools">Professional Schools</a></li>
+                            </ul>
+                        </li>
+                        <li role="none"><a role="menuitem" href="#sign-up">Sign Up</a></li>
+                        <li role="separator"></li>
+                        <li role="none"><a role="menuitem" href="#visit">Visit</a></li>
+                        <li role="none"><a role="menuitem" href="#photo-tour">Photo Tour</a></li>
+                        <li role="none"><a role="menuitem" href="#connect">Connect</a></li>
+                    </ul>
+                </li>
+                <li role="none">
+                    <a role="menuitem" aria-haspopup="true" href="#academics">Academics</a>
+                    <ul role="menu" aria-label="Academics">
+                        <li role="none"><a role="menuitem" href="#colleges-and-schools">Colleges & Schools</a></li>
+                        <li role="none"><a role="menuitem" href="#programs-of-study">Programs of Study</a></li>
+                        <li role="none"><a role="menuitem" href="#honors-programs">Honors Programs</a></li>
+                        <li role="none"><a role="menuitem" href="#online-courses">Online Courses</a></li>
+                        <li role="separator"></li>
+                        <li role="none"><a role="menuitem" href="#course-explorer">Course Explorer</a></li>
+                        <li role="none"><a role="menuitem" href="#register-for-class">Register for Class</a></li>
+                        <li role="none"><a role="menuitem" href="#academic-calendar">Academic Calendar</a></li>
+                        <li role="none"><a role="menuitem" href="#transcripts">Transcripts</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav> -->
+        <nav aria-label="navbar" >
+            <ul class="menubar-navigation" role="menubar">
                 <li role="none"><a role="menuitem" href="#home">Home</a></li>
                 <li role="none">
                     <a role="menuitem" aria-haspopup="true" href="#about">About</a>
@@ -237,78 +573,57 @@
                 </li>
             </ul>
         </nav>
-<div class="slideshow-container">
+    <div class="main">
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="assets\Images\temple.jpg" style="width:100%; height:500px;">
+                <div class="text">Caption Text</div>
+            </div>
+            <div class="mySlides fade">
+                <img src="assets\Images\temple1.jpg" style="width:100%; height:500px;">
+                <div class="text">Caption Two</div>
+            </div>
+            <div class="mySlides fade">
+                <img src="assets\Images\cmlgroup.jpg" style="width:100%; height:500px;">
+                <div class="text">Caption Three</div>
+            </div>
+        </div>
+        <br>
+        <div style="text-align:center">
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+        </div>
+        <script>
+            let slideIndex = 0;
+            showSlides();
 
-<div class="mySlides fade">
-  <div class="numbertext">1 / 5	</div>
-  <img src="assets\Images\temple.jpg" style="width:100%">
-  <div class="text">TEMPLE</div>
-</div>
-
-<div class="mySlides fade">
-  <div class="numbertext">2 / 5</div>
-  <img src="assets\Images\temple1.jpg" style="width:100%">
-  <div class="text">TEMPLE</div>
-</div>
-
-<div class="mySlides fade">
-  <div class="numbertext">3 / 5</div>
-  <img src="assets\Images\cmlgroup.jpg" style="width:100%">
-  <div class="text">SWAEROS EVENT</div>
-</div>
-
-<div class="mySlides fade">
-  <div class="numbertext">4 / 5</div>
-  <img src="assets\Images\cmlfriends.jpg" style="width:100%">
-  <div class="text">GANESH NIMMARJAN</div>
-</div>
-
-<div class="mySlides fade">
-  <div class="numbertext">5 / 5</div>
-  <img src="assets\Images\cmlCricket.jpg" style="width:100%">
-  <div class="text">CRICKET</div>
-</div>
-
-</div>
-<br>
-<div style="text-align:center">
-  <span class="dot"></span> 
-  <span class="dot"></span> 
-  <span class="dot"></span> 
-  <span class="dot"></span>
-  <span class="dot"></span>
-</div>
-<!-- <footer role="contentinfo">Developed By -- Suresh Myathari</footer> -->
-<footer role="contentinfo" style="display: flex; justify-content: space-between; align-items: center; font-size: 0.9em;">
+            function showSlides() {
+                let i;
+                let slides = document.getElementsByClassName("mySlides");
+                let dots = document.getElementsByClassName("dot");
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";  
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) {slideIndex = 1}    
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex-1].style.display = "block";  
+                dots[slideIndex-1].className += " active";
+                setTimeout(showSlides, 2000); // Change image every 2 seconds
+            }
+        </script>
+    </div>
+    <footer role="contentinfo" style="display: flex; justify-content: space-between; align-items: center; font-size: 0.9em;">
     <p style="margin: 0;">Developed by Suresh Myathari</p>
     <span style="display: flex; align-items: center;">
         <i class="fa fa-phone" style="margin-right: 5px;"></i>
-        <span>+91 (733) 066-9228</span>
+        <span>&copy; 2024 All Rights Reserved</span>
     </span>
-    <p style="margin: 0; text-align: center;">&copy; 2024 All Rights Reserved</p>
+    <p style="margin: 0; text-align: center;">+91 (733) 066-9228</p>
 </footer>
-
-
-<script>
-let slideIndex = 0;
-showSlides();
-
-function showSlides() {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}    
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
-  setTimeout(showSlides, 5000); // Change image every 5 seconds
-}
-</script>
+    <!-- <footer role="contentinfo">Mythical University footer information</footer> -->
 </body>
 </html>
