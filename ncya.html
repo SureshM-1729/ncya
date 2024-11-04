@@ -614,6 +614,22 @@ header {
                 dots[slideIndex-1].className += " active";
                 setTimeout(showSlides, 2000); // Change image every 2 seconds
             }
+            
+            function adjustLayout() {
+                const container = document.querySelector('body');
+                if (window.innerWidth <= 768) {
+                    container.style.fontSize = '14px'; // Smaller font size for mobile
+                } else {
+                    container.style.fontSize = '16px'; // Default font size for desktop
+                }
+            }
+
+            // Adjust layout on initial load
+            adjustLayout();
+
+            // Adjust layout on window resize
+            window.addEventListener('resize', adjustLayout);
+
         </script>
     </div>
     <footer role="contentinfo" style="display: flex; justify-content: space-between; align-items: center; font-size: 0.9em;">
