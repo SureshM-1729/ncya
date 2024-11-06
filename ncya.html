@@ -257,29 +257,7 @@ img {vertical-align: middle;}
   to {opacity: 1}
 }
 
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .text {font-size: 11px}
-}
 
-input[type="text"] {
-    text-align: left; /* Options: left, center, right */
-    padding: 10px; /* Optional: add some padding for better spacing */
-    width: 100%; /* Optional: makes the input take the full width of its container */
-    box-sizing: border-box; /* Ensures padding is included in the total width */
-}
-nav ul ul {
-    display: none; /* Initially hide the dropdowns */
-    position: absolute; /* Position them absolutely */
-    left: 0; /* Align to the left of the parent */
-    top: 100%; /* Position below the parent */
-    background: #333; /* Background color for dropdowns */
-    z-index: 1000; /* Ensure dropdowns appear above other elements */
-}
-
-nav ul li:hover > ul {
-    display: block; /* Show the dropdown on hover */
-}
 
 header1 {
     background: #0056b3;
@@ -290,70 +268,186 @@ header1 {
 }
 
 
+      /* Header styles */
+        
 
+        .menu-icon {
+            font-size: 30px;
+            color: #fff;
+            cursor: pointer;
+        }
 
-@media screen and (max-width: 768px) {
-            .menu-items {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-            }
+        .header-title {
+            font-size: 24px;
+            font-weight: bold;
+        }
 
-            nav ul {
-                flex-direction: column;
-            }
+        /* Sidebar styles */
+        .sidebar {
+            height: 100%;
+            width: 0; 
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: white;
+            overflow-x: hidden;
+            transition: 0.3s;
+            padding-top: 40px;
+            z-index: 1000;
+        }
 
-            nav ul li {
-                width: 100%;
-            }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
 
-            .menu-items.active {
-                display: flex;
-            }
+        .sidebar li {
+            text-align: left;
+            padding: 8px 15px;
+            transition: 0.3s;
+        
+        }
 
-            .menu-icon {
-                display: block;
-                font-size: 30px;
-                color: white;
-                cursor: pointer;
-            }
+        .sidebar a {
+            text-decoration: none;
+            color: #d1d1d1;
+            display: block;
+            padding: 8px 10px;
+            font-size: 16px;
+        }
 
+        .sidebar a:hover {
+            color: #fff;
+            background-color: grey;
+        }
 
-            .header-image {
-                width: 70px;
+        /* Nested submenu styles */
+        .nested {
+            display: none;
+            background-color: white;
+            margin-left: 20px;
+            border: 1px solid black;
+            padding: 15px;
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            margin: 10px 0;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .nested a {
+            padding-left: 15px;
+            font-size: 13px;
+            color: blue;
+            text-decoration: none;
+            background: none;
+        }
+
+        .nested a:hover {
+            background-color: transparent;
+            color: black;
+        }
+
+        /* Main content */
+        .main-content {
+            margin-left: 0;
+            padding: 16px;
+            transition: margin-left .3s;
+            padding-top: 60px; /* Adjusted padding for header */
+        }
+
+        .sidebar.open {
+            width: 250px;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            margin: 10px 0;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .menu-item svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Mobile responsive styling */
+        @media screen and (max-width: 768px) {
+            /* .menu-icon {
+                left: 15px;
+                position: fixed;
+            } */
+
+            .main-content {
+                margin-left: 0;
             }
         }
-        .title{
-        font-size: clamp(16px, 5vw, 48px);
+
+        /* Close button styling inside the sidebar */
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 30px;
+            color: #333;
+            cursor: pointer;
         }
         
-         .marquee {
-      width: 100%;
-      overflow: hidden;
-      background-color: #f0f0f0;  /* Optional background color */
-      padding: 10px;
+        
+        /* .toggleMenu {
+           
+       
+            align-items: center;
+            position: fixed;
+         
+            width: 100%;
+            margin: auto;
+            height:40px;
+            max-height:40px;
+        } */
+        .toggleMenu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        background-color: #333;
+        color: white;
+        margin: auto;
+        height:50px;
+        max-height:50px;
     }
 
-    .marquee-content {
-      display: inline-block;
-      white-space: nowrap;
-      animation: scroll-left 10s linear infinite;
-      font-size: 20px;  /* Adjust font size as needed */
-      color: #333;  /* Adjust text color */
+    .menu-icon {
+        font-size: 30px;
+        cursor: pointer;
     }
 
-    @keyframes scroll-left {
-      0% {
-        transform: translateX(100%);  /* Start from the right */
-      }
-      100% {
-        transform: translateX(-100%); /* Scroll to the left */
-      }
+    .link {
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+    .link i {
+        margin-right: 5px;
+    }
+
+    .menu-right {
+        display: flex;
+        align-items: center;
     }
     </style>
 </head>
 
-<header class="page" style="display: flex; justify-content: space-between;>
+<!-- <header class="page" style="display: flex; justify-content: space-between;>
 		
 			<div class="header-top-left">
 
@@ -369,7 +463,7 @@ header1 {
 				<a href="index.html" class="link">Logout</a>
 			</div>
 		</div>
-	</header>
+	</header> -->
 <body>
   
 <header1 role="banner" style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background-color: blue; color: blue;border: 3px solid white;
@@ -384,266 +478,108 @@ header1 {
     </div>
 </header1>
 
-     <!-- <nav aria-label="Mythical University">
-            <ul class="menubar-navigation" role="menubar">
-                <li role="none"><a role="menuitem" href="#home">Home</a></li>
-                
-                <li role="none">
-                    <a role="menuitem" aria-haspopup="true" href="#about">About</a>
-                    <ul role="menu" aria-label="About">
-                        <li role="none"><a role="menuitem" href="#overview">Overview</a></li>
-                        <li role="none"><a role="menuitem" href="#administration">Administration</a></li>
-                        <li role="none">
-                            <a role="menuitem" aria-haspopup="true" href="#facts">Facts</a>
-                            <ul role="menu" aria-label="Facts">
-                                <li role="none"><a role="menuitem" href="#history">History</a></li>
-                                <li role="none"><a role="menuitem" href="#current-statistics">Current Statistics</a></li>
-                                <li role="none"><a role="menuitem" href="#awards">Awards</a></li>
-                            </ul>
-                        </li>
-                        <li role="none">
-                            <a role="menuitem" aria-haspopup="true" href="#campus-tours">Campus Tours</a>
-                            <ul role="menu" aria-label="Campus Tours">
-                                <li role="none"><a role="menuitem" href="#for-prospective-students">For Prospective Students</a></li>
-                                <li role="none"><a role="menuitem" href="#for-alumni">For Alumni</a></li>
-                                <li role="none"><a role="menuitem" href="#for-visitors">For Visitors</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li role="none">
-                    <a role="menuitem" aria-haspopup="true" href="#admissions">Admissions</a>
-                    <ul role="menu" aria-label="Admissions">
-                        <li role="none"><a role="menuitem" href="#apply">Apply</a></li>
-                        <li role="none">
-                            <a role="menuitem" aria-haspopup="true" href="#tuition">Tuition</a>
-                            <ul role="menu" aria-label="Tuition">
-                                <li role="none"><a role="menuitem" href="#undergraduate">Undergraduate</a></li>
-                                <li role="none"><a role="menuitem" href="#graduate">Graduate</a></li>
-                                <li role="none"><a role="menuitem" href="#professional-schools">Professional Schools</a></li>
-                            </ul>
-                        </li>
-                        <li role="none"><a role="menuitem" href="#sign-up">Sign Up</a></li>
-                        <li role="separator"></li>
-                        <li role="none"><a role="menuitem" href="#visit">Visit</a></li>
-                        <li role="none"><a role="menuitem" href="#photo-tour">Photo Tour</a></li>
-                        <li role="none"><a role="menuitem" href="#connect">Connect</a></li>
-                    </ul>
-                </li>
-                <li role="none">
-                    <a role="menuitem" aria-haspopup="true" href="#academics">Academics</a>
-                    <ul role="menu" aria-label="Academics">
-                        <li role="none"><a role="menuitem" href="#colleges-and-schools">Colleges & Schools</a></li>
-                        <li role="none"><a role="menuitem" href="#programs-of-study">Programs of Study</a></li>
-                        <li role="none"><a role="menuitem" href="#honors-programs">Honors Programs</a></li>
-                        <li role="none"><a role="menuitem" href="#online-courses">Online Courses</a></li>
-                        <li role="separator"></li>
-                        <li role="none"><a role="menuitem" href="#course-explorer">Course Explorer</a></li>
-                        <li role="none"><a role="menuitem" href="#register-for-class">Register for Class</a></li>
-                        <li role="none"><a role="menuitem" href="#academic-calendar">Academic Calendar</a></li>
-                        <li role="none"><a role="menuitem" href="#transcripts">Transcripts</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav> -->
-        <nav aria-label="navbar" >
-            <ul class="menu-items" role="menubar">
-            <li><i class="fa fa-bars menu-icon" onclick="toggleMenu()"></i></li>
-                <li role="none"><a role="menuitem" href="#home">Home</a></li>
-                <li role="none">
-                    <a role="menuitem" aria-haspopup="true" href="#about">About</a>
-                    <ul role="menu" aria-label="About">
-                        <li role="none"><a role="menuitem" href="#overview">Overview</a></li>
-                        <li role="none"><a role="menuitem" href="#administration">Administration</a></li>
-                        <li role="none">
-                            <a role="menuitem" aria-haspopup="true" href="#facts">Facts</a>
-                            <ul role="menu" aria-label="Facts">
-                                <li role="none"><a role="menuitem" href="#history">History</a></li>
-                                <li role="none"><a role="menuitem" href="#current-statistics">Current Statistics</a></li>
-                                <li role="none"><a role="menuitem" href="#awards">Awards</a></li>
-                            </ul>
-                        </li>
-                        <li role="none">
-                            <a role="menuitem" aria-haspopup="true" href="#campus-tours">Campus Tours</a>
-                            <ul role="menu" aria-label="Campus Tours">
-                                <li role="none"><a role="menuitem" href="#for-prospective-students">For Prospective Students</a></li>
-                                <li role="none"><a role="menuitem" href="#for-alumni">For Alumni</a></li>
-                                <li role="none"><a role="menuitem" href="#for-visitors">For Visitors</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li role="none">
-                    <a role="menuitem" aria-haspopup="true" href="#admissions">CET'S</a>
-                    <ul role="menu" aria-label="Admissions" >
-                        <li role="none"><a role="menuitem" href="#Intermediate">Intermediate</a>
-                         <ul role="menu" aria-label="Tuition" class="scrollable-dropdown">
-                                <li role="none"><a role="menuitem" href="https://exams.nta.ac.in/CUET-UG/" target="_blank">CUET-UG</a></li>
-                                <li role="none"><a role="menuitem" href="https://eamcet.tsche.ac.in" target="_blank">EAMCET</a></li>
-    							<li role="none"><a role="menuitem" href="https://jeemain.nta.nic.in" target="_blank">JEE Mains</a></li>
-   								 <li role="none"><a role="menuitem" href="https://jeeadv.ac.in" target="_blank">JEE Advanced</a></li>
-    							<li role="none"><a role="menuitem" href="https://neet.nta.nic.in" target="_blank">NEET</a></li>
-   								 <li role="none"><a role="menuitem" href="https://iimcat.ac.in" target="_blank">CAT</a></li>
-   								 <li role="none"><a role="menuitem" href="https://dost.cgg.gov.in" target="_blank">DOST</a></li>
-                            </ul>
-                        </li>
-                        <li role="none"><a role="menuitem" href="#Intermediate">UG</a>
-                         <ul role="menu" aria-label="Tuition" class="scrollable-dropdown">
-                                <li role="none"><a role="menuitem" href="https://exams.nta.ac.in/CUET-UG/" target="_blank">CUET-UG</a></li>
-                                <li role="none"><a role="menuitem" href="https://cpget.ouadmissions.com/" target="_blank">CPGET</a></li>
-    							<li role="none"><a role="menuitem" href="https://pgecet.tsche.ac.in/#:~:text=TG%20PGECET%20%2D%202024)-,Post%20Graduate%20Engineering%20Common%20Entrance%20Test%20(TG%20PGECET%20%2D%202024),Pharmacy%20%2F%20M." target="_blank">PGECET</a></li>
-   								 
-                            </ul>
-                        </li>
-                        <li role="none"><a role="menuitem" href="#Intermediate">PG</a>
-                         <ul role="menu" aria-label="Tuition" class="scrollable-dropdown">
-                                <li role="none"><a role="menuitem" href="https://ugcnet.nta.ac.in/" target="_blank">UGC-NET</a></li>
-                                <li role="none"><a role="menuitem" href="http://telanganaset.org/" target="_blank">TS-SET</a></li>
-    							
-                            </ul>
-                        </li>
-                        <li role="none"><a role="menuitem" href="https://cuetug.ntaonline.in/universities/#central">central citys</a></li>
-                        <li role="none">
-                            <a role="menuitem" aria-haspopup="true" href="#tuition">CUET'S</a>
-                            <ul role="menu" aria-label="Tuition" class="scrollable-dropdown">
-                                <li role="none"><a role="menuitem" href="https://cuetug.ntaonline.in/universities/#central" target="_blank">Central University's</a></li>
-                                <li role="none"><a role="menuitem" href="https://cuetug.ntaonline.in/universities/#State" target="_blank">State University's</a></li>
-                                <li role="none"><a role="menuitem" href="https://cuetug.ntaonline.in/universities/#Private" target="_blank">Private University's</a></li>
-                                <li role="none"><a role="menuitem" href="https://cuetug.ntaonline.in/universities/#Goverment" target="_blank">Govt University's</a></li>
-                            </ul>
-                        </li>
-                        <li role="none"><a role="menuitem" href="#sign-up">Sign Up</a></li>
-                        <li role="separator"></li>
-                        <li role="none"><a role="menuitem" href="#visit">Visit</a></li>
-                        <li role="none"><a role="menuitem" href="#photo-tour">Photo Tour</a></li>
-                        <li role="none"><a role="menuitem" href="#connect">Connect</a></li>
-                    </ul>
-                </li>
-                <li role="none">
-                    <a role="menuitem" aria-haspopup="true" href="#academics">Events</a>
-                    <ul role="menu" aria-label="Academics">
-                        <li role="none"><a role="menuitem" href="#colleges-and-schools">Dussehra</a></li>
-                        <li role="none"><a role="menuitem" href="#programs-of-study">Sankranthi</a></li>
-                        <li role="none"><a role="menuitem" href="#honors-programs">Ganesh Nimarjan</a></li>
-                        <li role="none"><a role="menuitem" href="#online-courses">Eruvaka Pournami</a></li>
-                        <li role="separator"></li>
-                        <li role="none"><a role="menuitem" href="#course-explorer">Bonalu</a></li>
-                        <li role="none"><a role="menuitem" href="#register-for-class">Independence Day</a></li>
-                        <li role="none"><a role="menuitem" href="#academic-calendar">Republic Day</a></li>
-                        <li role="none"><a role="menuitem" href="#transcripts">Ambedkar Jayanthi</a></li>
-                    </ul>
-                </li>
-                
-                <li role="none">
-                    <a role="menuitem" aria-haspopup="true" href="#admissions">Scholorship's</a>
-                    <ul role="menu" aria-label="Admissions">
-                        <li role="none">
-                            <a role="menuitem" aria-haspopup="true" href="#tuition">State</a>
-                            <ul role="menu" aria-label="Tuition" class="scrollable-dropdown">
-                                <li role="none"><a role="menuitem" href="https://www.telanganaepass.cgg.gov.in/" target="_blank">Telangana ePASS</a></li>
-                            </ul>
-                        </li>
-                        
-                        <li role="none">
-                            <a role="menuitem" aria-haspopup="true" href="#tuition">Central</a>
-                            <ul role="menu" aria-label="Tuition" class="scrollable-dropdown">
-                                <li role="none"><a role="menuitem" href="https://scholarships.gov.in/" target="_blank">National Scholarship Portal (NSP)</a></li>
-                                
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                  <li role="none">
-                    <a role="menuitem" aria-haspopup="true" href="#admissions">Education</a>
-                    <ul role="menu" aria-label="Admissions">
-                        
-    <li role="none"> 
-    <a role="menuitem" aria-haspopup="true" href="#tuition">STATE UNIVERSITIES</a>
-    <ul role="menu" aria-label="Tuition" class="scrollable-dropdown">
-        <li role="none"><a role="menuitem" href="http://www.braou.ac.in" target="_blank">Dr. B. R. Ambedkar Open University, Hyderabad</a></li>
-        <li role="none"><a role="menuitem" href="http://www.jntuh.ac.in" target="_blank">Jawaharlal Nehru Technological University, Hyderabad</a></li>
-        <li role="none"><a role="menuitem" href="http://www.kakatiya.ac.in" target="_blank">Kakatiya University, Warangal</a></li>
-        <li role="none"><a role="menuitem" href="http://www.mgu.ac.in" target="_blank">Mahatma Gandhi University, Nalgonda</a></li>
-        <li role="none"><a role="menuitem" href="http://www.osmania.ac.in" target="_blank">Osmania University, Hyderabad</a></li>
-        <li role="none"><a role="menuitem" href="http://www.palamuruuniversity.com" target="_blank">Palamuru University, Mahabubnagar</a></li>
-        <li role="none"><a role="menuitem" href="http://www.rgukt.in" target="_blank">Rajiv Gandhi University of Knowledge Technologies, Basara</a></li>
-        <li role="none"><a role="menuitem" href="http://www.satavahana.ac.in" target="_blank">Satavahana University, Karimnagar</a></li>
-        <li role="none"><a role="menuitem" href="http://www.telanganauniversity.ac.in" target="_blank">Telangana University, Nizamabad</a></li>
-        <li role="none"><a role="menuitem" href="http://www.jnafau.ac.in" target="_blank">Jawaharlal Nehru Architecture and Fine Arts University, Hyderabad</a></li>
-        <li role="none"><a role="menuitem" href="http://www.psttu.ac.in" target="_blank">Potti Sreeramulu Telugu University, Hyderabad</a></li>
-        <li role="none"><a role="menuitem" href="http://www.pjtsau.edu.in" target="_blank">Prof. Jayashankar State Agricultural University, Rajendranagar, Hyderabad</a></li>
-        <li role="none"><a role="menuitem" href="http://www.pv-narsimha-rao-veterinary-university.org" target="_blank">Sri PV Narsimha Rao State University of Veterinary, Animal and Fishery Sciences, Hyderabad</a></li>
-        <li role="none"><a role="menuitem" href="http://www.horticulture.telangana.gov.in" target="_blank">Sri Konda Laxman Telangana State Horticulture University, Budwel, Hyderabad</a></li>
-        <li role="none"><a role="menuitem" href="http://www.klnruhs.in" target="_blank">Sri Kaloji Narayan Rao University of Health Sciences</a></li>
-    </ul>
-</li>
+      <!-- Header -->
+    <!-- <div class="toggleMenu">
+        <span class="menu-icon" onclick="toggleNav()">&#9776; </span>
+        <a href="ncya.html" class="link">Help</a> &nbsp;&nbsp;
+		<a href="index.html" class="link">Logout</a>
+    </div> -->
+    <div class="toggleMenu">
+    <!-- Menu Icon (Hamburger) for toggle -->
+    <span class="menu-icon" onclick="toggleNav()">&#9776; </span>
 
-        <li role="none">
-        <a role="menuitem" aria-haspopup="true" href="#tuition">CENTRAL UNIVERSITY'S</a>
-        <ul role="menu" aria-label="Tuition" class="scrollable-dropdown">
-        <li role="none"><a role="menuitem" href="http://www.amu.ac.in" target="_blank">Aligarh Muslim University</a></li>
-        <li role="none"><a role="menuitem" href="http://www.aus.ac.in" target="_blank">Assam University</a></li>
-        <li role="none"><a role="menuitem" href="http://www.bbau.ac.in" target="_blank">Babasaheb Bhimrao Ambedkar University</a></li>
-        <li role="none"><a role="menuitem" href="http://www.bhu.ac.in" target="_blank">Banaras Hindu University</a></li>
-        <li role="none"><a role="menuitem" href="http://www.cub.ac.in" target="_blank">Central University of Bihar</a></li>
-        <li role="none"><a role="menuitem" href="http://www.cug.ac.in" target="_blank">Central University of Gujarat</a></li>
-        <li role="none"><a role="menuitem" href="http://www.cuh.ac.in" target="_blank">Central University of Haryana</a></li>
-        <li role="none"><a role="menuitem" href="http://www.cuhimachal.ac.in" target="_blank">Central University of Himachal Pradesh</a></li>
-        <li role="none"><a role="menuitem" href="https://www.cujammu.ac.in" target="_blank">Central University of Jammu</a></li>
-        <li role="none"><a role="menuitem" href="http://cuj.ac.in/" target="_blank">Central University of Jharkhand</a></li>
-        <li role="none"><a role="menuitem" href="http://www.cuk.ac.in" target="_blank">Central University of Karnataka</a></li>
-        <li role="none"><a role="menuitem" href="http://www.cukashmir.ac.in" target="_blank">Central University of Kashmir</a></li>
-        <li role="none"><a role="menuitem" href="http://www.cukerala.ac.in" target="_blank">Central University of Kerala</a></li>
-        <li role="none"><a role="menuitem" href="http://cuo.ac.in/" target="_blank">Central University of Orissa</a></li>
-        <li role="none"><a role="menuitem" href="http://www.cup.ac.in" target="_blank">Central University of Punjab</a></li>
-        <li role="none"><a role="menuitem" href="http://www.curaj.ac.in/" target="_blank">Central University of Rajasthan</a></li>
-        <li role="none"><a role="menuitem" href="http://www.cutn.ac.in" target="_blank">Central University of Tamil Nadu</a></li>
-        <li role="none"><a role="menuitem" href="http://www.dhsgsu.ac.in/" target="_blank">Dr. Harisingh Gaur Vishwa Vidyalaya</a></li>
-        <li role="none"><a role="menuitem" href="http://www.ggu.ac.in/" target="_blank">Guru Ghasidas Vishwavidyalaya</a></li>
-        <li role="none"><a role="menuitem" href="http://www.hnbgu.ac.in" target="_blank">Hemvati Nandan Bahuguna Garhwal University</a></li>
-        <li role="none"><a role="menuitem" href="http://www.ignou.ac.in/" target="_blank">Indira Gandhi National Open University (IGNOU)</a></li>
-        <li role="none"><a role="menuitem" href="http://www.igntu.ac.in/" target="_blank">Indira Gandhi National Tribal University</a></li>
-        <li role="none"><a role="menuitem" href="http://jmi.ac.in/" target="_blank">Jamia Millia Islamia</a></li>
-        <li role="none"><a role="menuitem" href="http://www.jnu.ac.in/" target="_blank">Jawaharlal Nehru University</a></li>
-        <li role="none"><a role="menuitem" href="http://www.hindivishwa.org/" target="_blank">Mahatma Gandhi Antarrashtriya Hindi Vishwavidyalaya</a></li>
-        <li role="none"><a role="menuitem" href="http://www.manipuruniv.ac.in/" target="_blank">Manipur University</a></li>
-        <li role="none"><a role="menuitem" href="http://www.manuu.ac.in/" target="_blank">Maulana Azad National Urdu University</a></li>
-        <li role="none"><a role="menuitem" href="http://www.mzu.edu.in/" target="_blank">Mizoram University</a></li>
-        <li role="none"><a role="menuitem" href="http://nagalanduniversity.ac.in" target="_blank">Nagaland University</a></li>
-        <li role="none"><a role="menuitem" href="http://www.nehu.ac.in/" target="_blank">North Eastern Hill University</a></li>
-        <li role="none"><a role="menuitem" href="http://www.pondiuni.edu.in/" target="_blank">Pondicherry University</a></li>
-        <li role="none"><a role="menuitem" href="http://www.rgu.ac.in/" target="_blank">Rajiv Gandhi University</a></li>
-        <li role="none"><a role="menuitem" href="http://www.cus.ac.in" target="_blank">Sikkim University</a></li>
-        <li role="none"><a role="menuitem" href="http://www.tezu.ernet.in/" target="_blank">Tezpur University</a></li>
-        <li role="none"><a role="menuitem" href="http://www.efluniversity.ac.in/" target="_blank">The English and Foreign Languages University</a></li>
-        <li role="none"><a role="menuitem" href="http://www.tripurauniv.in/" target="_blank">Tripura University</a></li>
-        <li role="none"><a role="menuitem" href="http://www.allduniv.ac.in/" target="_blank">University of Allahabad</a></li>
-        <li role="none"><a role="menuitem" href="http://du.ac.in/" target="_blank">University of Delhi</a></li>
-        <li role="none"><a role="menuitem" href="http://www.uohyd.ac.in" target="_blank">University of Hyderabad</a></li>
-        <li role="none"><a role="menuitem" href="http://www.visva-bharati.ac.in/" target="_blank">Visva Bharati</a></li>
-        <li role="none"><a role="menuitem" href="http://www.mgcub.ac.in/" target="_blank">Mahatma Gandhi Central University</a></li>
-        <li role="none"><a role="menuitem" href="http://www.sanskrit.nic.in/" target="_blank">Central Sanskrit University, Delhi</a></li>
-        <li role="none"><a role="menuitem" href="https://www.slbsrsv.ac.in" target="_blank">Shri Lal Bahadur Shastri National Sanskrit University</a></li>
-        <li role="none"><a role="menuitem" href="https://nsktu.ac.in" target="_blank">National Sanskrit University</a></li>
-         </ul>
-                        </li>
-                        <li role="none"><a role="menuitem" href="#apply">PRIVATE UNIVERSITY'S</a>
-                        <ul role="menu" aria-label="Tuition" class="scrollable-dropdown">
-                        <li role="none"><a role="menuitem" href="http://www.anuraguniversity.ac.in" target="_blank">Anurag University</a></li>
-        <li role="none"><a role="menuitem" href="http://www.gurunanakuniversity.edu.in" target="_blank">Guru Nanak University</a> </li>
-        <li role="none"><a role="menuitem" href="http://www.mahindrauniversity.edu.in" target="_blank">Mahindra University</a></li>
-        <li role="none"><a role="menuitem" href="http://www.mallaREddyuniversity.com" target="_blank">Malla Reddy University</a></li>
-        <li role="none"><a role="menuitem" href="http://www.mnr.edu.in" target="_blank">MNR University</a></li>
-        <li role="none"><a role="menuitem" href="http://www.sruniversity.ac.in" target="_blank">S.R. University</a></li>
-        <li role="none"><a role="menuitem" href="http://www.sreenidhi.edu.in" target="_blank">Sreenidhi University</a></li>
-        <li role="none"><a role="menuitem" href="http://www.woxsen.edu.in" target="_blank">Woxsen University</a></li>
-                    </ul>
-                    </ul>
-                </li>
-                </li>
-            </ul>
-            <li><i class="fa fa-bars menu-icon" onclick="toggleMenu()"></i></li>
-        </nav>
+
+    <!-- Links for Home, Logout, and Language Change (with icons) -->
+    <div class="menu-right">
+        <a href="#" class="link">
+            <i class="fas fa-home"></i> Home
+        </a>
+        &nbsp;&nbsp;
+        <a href="index.html" class="link">
+            <i class="fas fa-sign-out-alt"></i> Logout
+        </a>
+        &nbsp;&nbsp;
+        <a href="#" class="link">
+            <i class="fas fa-language"></i> Language
+        </a>
+    </div>
+</div>
+
+    <!-- Sidebar Menu -->
+    <div id="mySidebar" class="sidebar">
+        <span class="close-btn" onclick="closeNav()">&times;</span> <!-- Close button -->
+        <ul>
+            <!-- Students Menu with nested items -->
+            <li>
+                <div class="menu-item" onclick="toggleSubMenu('studentsSubMenu')">
+                    <span>
+                        <svg viewBox="0 0 24 24" fill="pink" xmlns="http://www.w3.org/2000/svg"><path d="M12 14l-8-4.5V18h16V9.5L12 14zM12 12L4 7.5l8-4.5 8 4.5L12 12z"/></svg>
+                        Education
+                    </span>
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="24" height="24"><path d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+                <ul id="studentsSubMenu" class="nested">
+                    <li><a href="#">Sub Student 1</a></li>
+                    <li><a href="#">Sub Student 2</a></li>
+                    <li><a href="#">Sub Student 3</a></li>
+                    <li><a href="#">Sub Student 4</a></li>
+                </ul>
+            </li>
+
+            <!-- Institute Menu with nested items -->
+            <li>
+                <div class="menu-item" onclick="toggleSubMenu('instituteSubMenu')">
+                    <span>
+                        <svg viewBox="0 0 24 24" fill="purple" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7v7c0 4.9706 3.8629 9.0606 8.7775 9.8745L12 24l1.2225-.1255C18.1371 23.0606 22 18.9706 22 14V7l-10-5zM12 21.65l-.2116-.0196C8.4054 20.9815 5.5 17.642 5.5 14V8.5103l6.5-3.2 6.5 3.2V14c0 3.642-2.9054 6.9815-6.2884 7.6304L12 21.65z"/></svg>
+                        Scholorship's
+                    </span>
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="24" height="24"><path d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+                <ul id="instituteSubMenu" class="nested">
+                	<li><a href="#">NMMS</a></li>
+                    <li><a href="https://www.telanganaepass.cgg.gov.in/" target="_blank">Telangana ePASS</a></li>
+                    <li><a href="https://scholarships.gov.in/" target="_blank">National Scholarship Portal (NSP)</a></li>
+                    
+                </ul>
+            </li>
+
+            <!-- Officers Menu with nested items -->
+            <li>
+                <div class="menu-item" onclick="toggleSubMenu('officersSubMenu')">
+                    <span>
+                        <svg viewBox="0 0 24 24" fill="blue" xmlns="http://www.w3.org/2000/svg"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                        Officers
+                    </span>
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="24" height="24"><path d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+                <ul id="officersSubMenu" class="nested">
+                    <li><a href="#">Sub Officer 1</a></li>
+                    <li><a href="#">Sub Officer 2</a></li>
+                    <li><a href="#">Sub Officer 3</a></li>
+                    <li><a href="#">Sub Officer 4</a></li>
+                </ul>
+            </li>
+
+            <!-- Public Menu with nested items -->
+            <li>
+                <div class="menu-item" onclick="toggleSubMenu('publicSubMenu')">
+                    <span>
+                        <svg viewBox="0 0 24 24" fill="teal" xmlns="http://www.w3.org/2000/svg"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                        Public
+                    </span>
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="24" height="24"><path d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+                <ul id="publicSubMenu" class="nested">
+                    <li><a href="#">Sub Public 1</a></li>
+                    <li><a href="#">Sub Public 2</a></li>
+                    <li><a href="#">Sub Public 3</a></li>
+                    <li><a href="#">Sub Public 4</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
     <div class="main">
         <div class="slideshow-container">
             <div class="mySlides fade">
@@ -666,40 +602,68 @@ header1 {
             <span class="dot"></span> 
         </div>
         <script>
-            let slideIndex = 0;
-            showSlides();
+        
+        let slideIndex = 0;
+        showSlides();
 
-            function showSlides() {
-                let i;
-                let slides = document.getElementsByClassName("mySlides");
-                let dots = document.getElementsByClassName("dot");
-                for (i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";  
-                }
-                slideIndex++;
-                if (slideIndex > slides.length) {slideIndex = 1}    
-                for (i = 0; i < dots.length; i++) {
-                    dots[i].className = dots[i].className.replace(" active", "");
-                }
-                slides[slideIndex-1].style.display = "block";  
-                dots[slideIndex-1].className += " active";
-                setTimeout(showSlides, 2000); // Change image every 2 seconds
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
             }
-         // Function to toggle the menu for mobile devices
-            function toggleMenu() {
-                const menuItems = document.querySelector('.menu-items');
-                // Only toggle menu if the screen width is <= 768px
-                if (window.innerWidth <= 768) {
-                    menuItems.classList.toggle('active');
-                }
-                else{
-                	 menuItems.classList.toggle('inactive');
-                }
-                
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
             }
-            
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+        // Function to toggle the sidebar visibility
+        function toggleNav() {
+            var sidebar = document.getElementById("mySidebar");
+            var mainContent = document.getElementById("main");
 
-        </script>
+            sidebar.classList.toggle('open');
+            if (sidebar.classList.contains('open')) {
+                mainContent.style.marginLeft = "250px"; // Sidebar opened
+            } else {
+                mainContent.style.marginLeft = "0"; // Sidebar closed
+            }
+        }
+
+        // Function to close the sidebar
+        function closeNav() {
+            var sidebar = document.getElementById("mySidebar");
+            var mainContent = document.getElementById("main");
+
+            sidebar.classList.remove('open');
+            mainContent.style.marginLeft = "0"; // Close the sidebar and reset margin
+        }
+
+        // Function to toggle nested submenus
+        function toggleSubMenu(menuId) {
+            var nestedMenu = document.getElementById(menuId);
+            var allSubMenus = document.querySelectorAll('.nested');
+
+            // Close all other submenus
+            allSubMenus.forEach(function(menu) {
+                if (menu !== nestedMenu) {
+                    menu.style.display = 'none';  // Close other submenus
+                }
+            });
+
+            // Toggle the clicked submenu
+            if (nestedMenu.style.display === "block") {
+                nestedMenu.style.display = "none";  // Close the submenu
+            } else {
+                nestedMenu.style.display = "block";  // Open the submenu
+            }
+        }
+    </script>
     </div>
     <footer role="contentinfo" style="display: flex; justify-content: space-between; align-items: center; font-size: 0.9em;">
     <p style="margin: 0;">Developed by Suresh Myathari</p>
