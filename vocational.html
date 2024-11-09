@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocational Courses </title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: #f4f7fb;
+            color: #333;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            height: 100px;
+            max-height: 100px;
+        }
+
+        header h1 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 600;
+            font-size: 30px;
+        }
+
+        .course-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .course-card-header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border-radius: 4px 4px 0 0;
+            margin-top: 10px;
+        }
+
+        .course-card-body {
+            padding: 20px;
+        }
+
+        .course-card-body ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .course-card-body ul li {
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .course-card-body ul li:before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #007bff;
+            font-size: 1.5rem;
+        }
+
+        /* Footer styling */
+        footer {
+            background: #0056b3;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 1rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            border: 3px solid white;
+        }
+
+        .btn-visit {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+            display: block;
+            width: fit-content;
+        }
+
+        .btn-visit:hover {
+            background-color: #0056b3;
+        }
+
+        header1 {
+            background: #0056b3;
+            color: #fff;
+            padding: 5px 0;
+            height: 60px;
+            max-height: 60px;
+        }
+
+        .header-topp {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #232f3e;
+            font-size: 14px;
+        }
+
+        .header-topp a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .marquee {
+            font-size: 15px;
+            color: yellow;
+            padding: 2px;
+            text-align: center;
+            animation: blink 2s step-start infinite;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Page Header -->
+    <header1 role="banner" style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background-color: blue; color: blue;border: 3px solid white;">
+        <div class="header-image" style="flex-shrink: 0;">
+            <img src="assets\Images\temple.jpg" alt="Description of image" style="height: 50px; width: auto; border-radius: 30px;">
+        </div>
+        
+        <div class="title" style="flex: 2; text-align: center; font-size: 14px; color: white;">NAVA CHAITHANYA YUVAJANA ASSOCIATION</div>
+        <div class="header-image" style="flex-shrink: 0;">
+            <img src="assets\Images\ncyaLogo.jpg" alt="Description of image" style="height: 50px; width: auto; border-radius: 60px;">
+        </div>
+    </header1>
+
+    <div class="header-topp">
+        <div class="header-top-left">
+            <strong style='color: white;'>SURESH MYATHARI <i class="fas fa-smile" style='font-size: 20px; color: yellow'></i></strong>
+        </div>
+        <div class="marquee">
+            <strong>Welcome to N C Y A! Check out our latest updates and more.</strong>
+        </div>
+        <div class="header-top-right">
+            <a href="ncya.html" class="link">Home</a> 
+            <a href="index.html" class="link">Logout</a>
+        </div>
+    </div>
+
+    <!-- Courses Section -->
+    <div class="container" id="courses">
+        <!-- Vocational Courses -->
+        <div class="course-card">
+            <div class="course-card-header">
+                <h5>Diploma in Engineering (Polytechnic)</h5>
+            </div>
+            <div class="course-card-body">
+                <p><strong>Duration:</strong> 3 years</p>
+                <ul>
+                    <li>Civil Engineering</li>
+                    <li>Mechanical Engineering</li>
+                    <li>Electrical Engineering</li>
+                    <li>Electronics & Communication Engineering</li>
+                    <li>Computer Science Engineering</li>
+                    <li>Information Technology</li>
+                    <li>Automobile Engineering</li>
+                    <li>Textile Engineering</li>
+                    <li>Industrial Electronics</li>
+                </ul>
+                <p><strong>Career Opportunities:</strong> Engineering Technician, Project Manager, Mechanical Engineer, Civil Engineer, IT Support, Electronics Engineer</p>
+                <a href="#" class="btn-visit">Visit More</a>
+            </div>
+        </div>
+
+        <div class="course-card">
+            <div class="course-card-header">
+                <h5>Industrial Training Institutes (ITI)</h5>
+            </div>
+            <div class="course-card-body">
+                <p><strong>Duration:</strong> 1-2 years</p>
+                <ul>
+                    <li>Electrician</li>
+                    <li>Fitter</li>
+                    <li>Welder</li>
+                    <li>Plumber</li>
+                    <li>Mechanic (Motor Vehicle)</li>
+                    <li>Turner</li>
+                    <li>Refrigeration and Air Conditioning Mechanic</li>
+                    <li>Computer Operator and Programming Assistant (COPA)</li>
+                    <li>Draughtsman (Civil/Mechanical)</li>
+                    <li>Painter (General)</li>
+                </ul>
+                <p><strong>Career Opportunities:</strong> Electrician, Welder, Plumber, Mechanic, HVAC Technician, Computer Operator, Draughtsman</p>
+                <a href="#" class="btn-visit">Visit More</a>
+            </div>
+        </div>
+
+        <div class="course-card">
+            <div class="course-card-header">
+                <h5>Diploma in Hotel Management</h5>
+            </div>
+            <div class="course-card-body">
+                <p><strong>Duration:</strong> 1-2 years</p>
+                <ul>
+                    <li>Food Production</li>
+                    <li>Front Office Operations</li>
+                    <li>Housekeeping</li>
+                    <li>Catering</li>
+                    <li>Event Management</li>
+                </ul>
+                <p><strong>Career Opportunities:</strong> Hotel Manager, Catering Officer, Front Office Manager, Event Planner, Housekeeping Supervisor</p>
+                <a href="#" class="btn-visit">Visit More</a>
+            </div>
+        </div>
+
+        <div class="course-card">
+            <div class="course-card-header">
+                <h5>Fashion Designing</h5>
+            </div>
+            <div class="course-card-body">
+                <p><strong>Duration:</strong> 1-2 years</p>
+                <ul>
+                    <li>Garment Construction</li>
+                    <li>Textile Science</li>
+                    <li>Fashion Illustration</li>
+                    <li>Pattern Making</li>
+                    <li>Apparel Production</li>
+                </ul>
+                <p><strong>Career Opportunities:</strong> Fashion Designer, Textile Designer, Costume Designer, Retail Buyer</p>
+                <a href="#" class="btn-visit">Visit More</a>
+            </div>
+        </div>
+
+        <div class="course-card">
+            <div class="course-card-header">
+                <h5>Animation and Multimedia</h5>
+            </div>
+            <div class="course-card-body">
+                <p><strong>Duration:</strong> 1-2 years</p>
+                <ul>
+                    <li>2D/3D Animation</li>
+                    <li>Graphic Designing</li>
+                    <li>Visual Effects</li>
+                    <li>Video Editing</li>
+                    <li>Game Designing</li>
+                </ul>
+                <p><strong>Career Opportunities:</strong> Animator, Graphic Designer, Video Editor, VFX Artist, Game Developer</p>
+                <a href="#" class="btn-visit">Visit More</a>
+            </div>
+        </div>
+
+        <div class="course-card">
+            <div class="course-card-header">
+                <h5>Beauty and Wellness</h5>
+            </div>
+            <div class="course-card-body">
+                <p><strong>Duration:</strong> 1-2 years</p>
+                <ul>
+                    <li>Beauty Therapist</li>
+                    <li>Hair Stylist</li>
+                    <li>Makeup Artist</li>
+                    <li>Skin Care Specialist</li>
+                </ul>
+                <p><strong>Career Opportunities:</strong> Beautician, Makeup Artist, Cosmetologist, Hair Stylist</p>
+                <a href="#" class="btn-visit">Visit More</a>
+            </div>
+        </div>
+
+        <div class="course-card">
+            <div class="course-card-header">
+                <h5>Digital Marketing</h5>
+            </div>
+            <div class="course-card-body">
+                <p><strong>Duration:</strong> 1 year</p>
+                <ul>
+                    <li>SEO</li>
+                    <li>Social Media Marketing</li>
+                    <li>Content Marketing</li>
+                    <li>Email Marketing</li>
+                    <li>Affiliate Marketing</li>
+                </ul>
+                <p><strong>Career Opportunities:</strong> Digital Marketing Specialist, SEO Analyst, Social Media Manager, Content Writer</p>
+                <a href="#" class="btn-visit">Visit More</a>
+            </div>
+        </div>
+
+        <div class="course-card">
+            <div class="course-card-header">
+                <h5>Photography and Videography</h5>
+            </div>
+            <div class="course-card-body">
+                <p><strong>Duration:</strong> 1-2 years</p>
+                <ul>
+                    <li>Photography Techniques</li>
+                    <li>Video Production</li>
+                    <li>Lighting Techniques</li>
+                    <li>Photo Editing</li>
+                    <li>Videography Equipment</li>
+                </ul>
+                <p><strong>Career Opportunities:</strong> Photographer, Videographer, Camera Operator, Photo Editor, Cinematographer</p>
+                <a href="#" class="btn-visit">Visit More</a>
+            </div>
+        </div>
+
+        <div class="course-card">
+            <div class="course-card-header">
+                <h5>Paramedical Courses</h5>
+            </div>
+            <div class="course-card-body">
+                <p><strong>Duration:</strong> 1-2 years</p>
+                <ul>
+                    <li>Medical Laboratory Technology</li>
+                    <li>Radiography</li>
+                    <li>Physiotherapy</li>
+                    <li>Emergency Medical Technician</li>
+                    <li>Pharmacy Technician</li>
+                </ul>
+                <p><strong>Career Opportunities:</strong> Lab Technician, Radiographer, Physiotherapist, Paramedic</p>
+                <a href="#" class="btn-visit">Visit More</a>
+            </div>
+        </div>
+
+        <div class="course-card">
+            <div class="course-card-header">
+                <h5>Agriculture and Horticulture</h5>
+            </div>
+            <div class="course-card-body">
+                <p><strong>Duration:</strong> 1-2 years</p>
+                <ul>
+                    <li>Crops & Soil Science</li>
+                    <li>Horticultural Practices</li>
+                    <li>Farming Techniques</li>
+                    <li>Crop Protection</li>
+                </ul>
+                <p><strong>Career Opportunities:</strong> Agronomist, Horticulturist, Farm Manager, Agricultural Scientist</p>
+                <a href="#" class="btn-visit">Visit More</a>
+            </div>
+        </div>
+
+        <div class="course-card">
+            <div class="course-card-header">
+                <h5>Media and Journalism</h5>
+            </div>
+            <div class="course-card-body">
+                <p><strong>Duration:</strong> 1-2 years</p>
+                <ul>
+                    <li>Print Journalism</li>
+                    <li>Broadcast Journalism</li>
+                    <li>Radio and TV Production</li>
+                    <li>Digital Journalism</li>
+                </ul>
+                <p><strong>Career Opportunities:</strong> Journalist, TV Reporter, Radio Host, News Editor, Content Writer</p>
+                <a href="#" class="btn-visit">Visit More</a>
+            </div>
+        </div>
+
+        <div class="course-card">
+            <div class="course-card-header">
+                <h5>Healthcare and Medical Assistance</h5>
+            </div>
+            <div class="course-card-body">
+                <p><strong>Duration:</strong> 1-2 years</p>
+                <ul>
+                    <li>Nursing Assistant</li>
+                    <li>Medical Coding</li>
+                    <li>Clinical Assistant</li>
+                    <li>Medical Transcription</li>
+                </ul>
+                <p><strong>Career Opportunities:</strong> Nurse, Medical Assistant, Health Technician, Clinical Coordinator</p>
+                <a href="#" class="btn-visit">Visit More</a>
+            </div>
+        </div>
+
+        <div class="course-card">
+            <div class="course-card-header">
+                <h5>Construction and Building Technology</h5>
+            </div>
+            <div class="course-card-body">
+                <p><strong>Duration:</strong> 1-2 years</p>
+                <ul>
+                    <li>Building Construction</li>
+                    <li>Building Surveying</li>
+                    <li>Construction Management</li>
+                    <li>Civil Engineering</li>
+                </ul>
+                <p><strong>Career Opportunities:</strong> Civil Engineer, Surveyor, Construction Manager, Site Supervisor</p>
+                <a href="#" class="btn-visit">Visit More</a>
+            </div>
+        </div>
+
+        <div class="course-card">
+            <div class="course-card-header">
+                <h5>Retail Management</h5>
+            </div>
+            <div class="course-card-body">
+                <p><strong>Duration:</strong> 1-2 years</p>
+                <ul>
+                    <li>Retail Sales Management</li>
+                    <li>Customer Relationship</li>
+                    <li>Retail Operations</li>
+                    <li>Visual Merchandising</li>
+                </ul>
+                <p><strong>Career Opportunities:</strong> Retail Manager, Sales Executive, Store Manager, Marketing Specialist</p>
+                <a href="#" class="btn-visit">Visit More</a>
+            </div>
+        </div>
+
+        <div class="course-card">
+            <div class="course-card-header">
+                <h5>Food Production and Culinary Arts</h5>
+            </div>
+            <div class="course-card-body">
+                <p><strong>Duration:</strong> 1-2 years</p>
+                <ul>
+                    <li>Cooking Techniques</li>
+                    <li>Baking and Patisserie</li>
+                    <li>Food Safety</li>
+                    <li>Hospitality Management</li>
+                </ul>
+                <p><strong>Career Opportunities:</strong> Chef, Baker, Food Stylist, Catering Manager</p>
+                <a href="#" class="btn-visit">Visit More</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer role="contentinfo" style="display: flex; justify-content: space-between; align-items: center; font-size: 0.9em;">
+        <p style="margin: 0;">Developed by Suresh Myathari</p>
+        <span style="display: flex; align-items: center;">
+            <span>&copy; 2024 N C Y A. All rights reserved.</span>
+        </span>
+    </footer>
+
+    <!-- Bootstrap JS and Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

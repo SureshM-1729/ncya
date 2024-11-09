@@ -25,6 +25,7 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script crossorigin="anonymous"
 	src="https://kit.fontawesome.com/70a642cd7c.js"></script>
+	 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -304,7 +305,7 @@ header1 {
 
         .sidebar li {
             text-align: left;
-            padding: 8px 15px;
+           padding: 0px 12px;
             transition: 0.3s;
         
         }
@@ -394,7 +395,7 @@ header1 {
         /* Close button styling inside the sidebar */
         .close-btn {
             position: absolute;
-            top: 15px;
+            top: 2px;
             right: 15px;
             font-size: 30px;
             color: #333;
@@ -444,6 +445,18 @@ header1 {
         display: flex;
         align-items: center;
     }
+    
+    .education-icon i {
+    color: blue;       /* Change the color of the icon */
+    font-size: 24px;   /* Adjust the size of the icon */
+    vertical-align: middle; /* Align the icon vertically with the text */
+}
+
+	.education-icon {
+    font-size: 16px;   /* You can adjust the font size for the text */
+    color: black;      /* Set the color for the text */
+}
+    
     </style>
 </head>
 
@@ -509,36 +522,60 @@ header1 {
     <div id="mySidebar" class="sidebar">
         <span class="close-btn" onclick="closeNav()">&times;</span> <!-- Close button -->
         <ul>
-            <!-- Students Menu with nested items -->
-            <li>
-                <div class="menu-item" onclick="toggleSubMenu('studentsSubMenu')">
-                    <span>
-                        <svg viewBox="0 0 24 24" fill="pink" xmlns="http://www.w3.org/2000/svg"><path d="M12 14l-8-4.5V18h16V9.5L12 14zM12 12L4 7.5l8-4.5 8 4.5L12 12z"/></svg>
-                        Education
-                    </span>
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="24" height="24"><path d="M19 9l-7 7-7-7"></path></svg>
-                </div>
-                <ul id="studentsSubMenu" class="nested">
-                    <li><a href="#">Sub Student 1</a></li>
-                    <li><a href="#">Sub Student 2</a></li>
-                    <li><a href="#">Sub Student 3</a></li>
-                    <li><a href="#">Sub Student 4</a></li>
-                </ul>
-            </li>
+           <!-- Students Menu with nested items -->
+<li>
+    <div class="menu-item" onclick="toggleSubMenu('studentsSubMenu')">
+        <span class="education-icon">
+            <i class="material-icons">school</i>&nbsp;&nbsp;&nbsp;Education
+        </span>
+    </div>
+    <ul id="studentsSubMenu" class="nested">
+        <!-- SSC Menu Item -->
+        <li>
+            <div class="menu-item" onclick="toggleSubMenu('sscSubMenu1')">
+                <span class="education-icon">
+                    <i class="fa fa-book"></i>&nbsp;&nbsp;SSC
+                </span>
+            </div>
+            <!-- SSC Nested Submenu -->
+            <ul id="sscSubMenu1" class="nested1" style="display:none;">
+                <li><a href="vocational.html">&#8594;Vocational</a></li>
+                <li><a href="afterSsc.html">&#8594;Intermediate</a></li>
+            </ul>
+        </li>
+
+
+ <!-- SSC Menu Item -->
+        <li>
+            <div class="menu-item" onclick="toggleSubMenu('ugSubMenu1')">
+                <span class="education-icon">
+                    <i class="fa fa-book"></i>&nbsp;&nbsp;UG
+                </span>
+            </div>
+            <!-- SSC Nested Submenu -->
+            <ul id="ugSubMenu1" class="nested1" style="display:none;">
+                <li><a href="vocational.html">&#8594;CPGET</a></li>
+                <li><a href="intermediate.html">&#8594;NET</a></li>
+            </ul>
+        </li>
+        <!-- Other Students Menu Items -->
+        <li><a href="afterIntermediate.html">UG</a></li>
+        <li><a href="#">PG</a></li>
+    </ul>
+</li>
+
 
             <!-- Institute Menu with nested items -->
             <li>
                 <div class="menu-item" onclick="toggleSubMenu('instituteSubMenu')">
-                    <span>
-                        <svg viewBox="0 0 24 24" fill="purple" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7v7c0 4.9706 3.8629 9.0606 8.7775 9.8745L12 24l1.2225-.1255C18.1371 23.0606 22 18.9706 22 14V7l-10-5zM12 21.65l-.2116-.0196C8.4054 20.9815 5.5 17.642 5.5 14V8.5103l6.5-3.2 6.5 3.2V14c0 3.642-2.9054 6.9815-6.2884 7.6304L12 21.65z"/></svg>
-                        Scholorship's
-                    </span>
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="24" height="24"><path d="M19 9l-7 7-7-7"></path></svg>
+                    <span class="education-icon">
+    				<i class="material-icons">school</i>&nbsp;&nbsp;&nbsp;Scholorship's
+					</span>
                 </div>
                 <ul id="instituteSubMenu" class="nested">
-                	<li><a href="#">NMMS</a></li>
-                    <li><a href="https://www.telanganaepass.cgg.gov.in/" target="_blank">Telangana ePASS</a></li>
-                    <li><a href="https://scholarships.gov.in/" target="_blank">National Scholarship Portal (NSP)</a></li>
+                	<li><a href="#">&#8594;NMMS</a></li>
+                    <li><a href="https://www.telanganaepass.cgg.gov.in/" target="_blank">&#8594;Telangana ePASS</a></li>
+                    <li><a href="https://scholarships.gov.in/" target="_blank">&#8594;National Scholarship Portal (NSP)</a></li>
                     
                 </ul>
             </li>
@@ -546,28 +583,24 @@ header1 {
             <!-- Officers Menu with nested items -->
             <li>
                 <div class="menu-item" onclick="toggleSubMenu('officersSubMenu')">
-                    <span>
-                        <svg viewBox="0 0 24 24" fill="blue" xmlns="http://www.w3.org/2000/svg"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-                        JOB'S
-                    </span>
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="24" height="24"><path d="M19 9l-7 7-7-7"></path></svg>
+                    <span class="education-icon">
+    				<i class="material-icons">school</i>&nbsp;&nbsp;&nbsp;Education
+					</span>
                 </div>
                 <ul id="officersSubMenu" class="nested">
-                    <li><a href="govtJobs.html">Govt Job's</a></li>
-                    <li><a href="#">Sub Officer 2</a></li>
-                    <li><a href="#">Sub Officer 3</a></li>
-                    <li><a href="#">Sub Officer 4</a></li>
+                    <li><a href="#">&#8594;Sub Officer 1</a></li>
+                    <li><a href="#">&#8594;Sub Officer 2</a></li>
+                    <li><a href="#">&#8594;Sub Officer 3</a></li>
+                    <li><a href="#">&#8594;Sub Officer 4</a></li>
                 </ul>
             </li>
 
             <!-- Public Menu with nested items -->
             <li>
                 <div class="menu-item" onclick="toggleSubMenu('publicSubMenu')">
-                    <span>
-                        <svg viewBox="0 0 24 24" fill="teal" xmlns="http://www.w3.org/2000/svg"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-                        Public
-                    </span>
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="24" height="24"><path d="M19 9l-7 7-7-7"></path></svg>
+                    <span class="education-icon">
+    				<i class="material-icons">school</i>&nbsp;&nbsp;&nbsp;Education
+					</span>
                 </div>
                 <ul id="publicSubMenu" class="nested">
                     <li><a href="#">Sub Public 1</a></li>
@@ -648,14 +681,28 @@ header1 {
         function toggleSubMenu(menuId) {
             var nestedMenu = document.getElementById(menuId);
             var allSubMenus = document.querySelectorAll('.nested');
-
+           
+            if(menuId.endsWith('1')){
+            var allSubMenus1 = document.querySelectorAll('.nested1');
+            allSubMenus1.forEach(function(menu) {
+                if (menu !== nestedMenu) {
+                    menu.style.display = 'none';  // Close other submenus
+                }
+            });
+            }else{
             // Close all other submenus
             allSubMenus.forEach(function(menu) {
                 if (menu !== nestedMenu) {
                     menu.style.display = 'none';  // Close other submenus
                 }
             });
-
+            var allSubMenus1 = document.querySelectorAll('.nested1');
+            allSubMenus1.forEach(function(menu) {
+                if (menu !== nestedMenu) {
+                    menu.style.display = 'none';  // Close other submenus
+                }
+            });
+            }
             // Toggle the clicked submenu
             if (nestedMenu.style.display === "block") {
                 nestedMenu.style.display = "none";  // Close the submenu
@@ -663,6 +710,8 @@ header1 {
                 nestedMenu.style.display = "block";  // Open the submenu
             }
         }
+   
+
     </script>
     </div>
     <footer role="contentinfo" style="display: flex; justify-content: space-between; align-items: center; font-size: 0.9em;">
