@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="login.css" />
-    <link rel="icon" type="image/x-icon" href="assets/favicon/temple.ico">
+    <link rel="stylesheet" tyep="text/css" href="login.css" />
+     <link rel="icon" type="image/x-icon" href="assets\favicon\temple.ico">
+    
 </head>
 <body>
     <div class="wrapper">
         <div class="logo">
-            <img src="assets/Images/temple.jpg" alt="Logo">
+            <img src="assets/Images/temple.jpg" alt="">
         </div>
         <div class="heading">
             <h2>NCYA</h2>
         </div>
-        <!-- Using POST method for form submission -->
-        <form name="myform" action="ncya.html" method="POST" onsubmit="return validateform()">
+        <form name="myform" action="ncya.html"  onsubmit="return validateform()">
             <div class="form-field">
                 <i class="fas fa-user"></i>
                 <input type="text" name="userName" id="userName" placeholder="Username" maxlength="4" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123 || event.charCode == 32)" required>
@@ -29,13 +29,23 @@
             <button class="btn" type="submit">Login</button>
         </form>
     </div>
-
-    <!-- JavaScript function to validate only non-sensitive details -->
     <script>
         function validateform() {
             var userId = document.myform.userName.value;
+            var password = document.myform.password.value;
+            var password1 = "1234";
+            var userId1 = "ncya";
+
             if (userId == null || userId == "" || userId.length != 4) {
                 alert("Please enter a valid user Id");
+                return false;
+            }
+            if (userId != userId1) {
+                alert("Entered user Id does not match");
+                return false;
+            }
+            if (password != password1) {
+                alert("Entered password does not match");
                 return false;
             }
             return true;
