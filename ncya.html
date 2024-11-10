@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mythical University</title>
+    <title>NCYA</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
      <link rel="stylesheet"
@@ -424,6 +424,8 @@ header1 {
         margin: auto;
         height:50px;
         max-height:50px;
+        overflow-x: hidden;
+        
     }
 
     .menu-icon {
@@ -457,6 +459,25 @@ header1 {
     color: black;      /* Set the color for the text */
 }
     
+   /* Google Translate Element Styling */
+        #google_translate_element {
+            display: inline-block;
+            padding: 3px 8px; /* Reduce padding */
+            border-radius: 5px;
+            font-size: 12px; /* Reduce font size */
+            cursor: pointer;
+            margin-left: 10px; /* Space between language and other items */
+        }
+
+        /* Styling the select dropdown box */
+        .goog-te-combo {
+             margin-top:2px;
+            vertical-align:top;
+            display:inline-block;
+        }
+        
+       
+
     </style>
 </head>
 
@@ -501,7 +522,6 @@ header1 {
     <!-- Menu Icon (Hamburger) for toggle -->
     <span class="menu-icon" onclick="toggleNav()">&#9776; </span>
 
-
     <!-- Links for Home, Logout, and Language Change (with icons) -->
     <div class="menu-right">
         <a href="#" class="link">
@@ -511,10 +531,13 @@ header1 {
         <a href="index.html" class="link">
             <i class="fas fa-sign-out-alt"></i> Logout
         </a>
-        &nbsp;&nbsp;
-        <a href="#" class="link">
+         &nbsp;&nbsp;
+        <!--<a href="#" class="link">
             <i class="fas fa-language"></i> Language
-        </a>
+        </a> -->
+           <div id="google_translate_element"></div>
+        
+        <!-- Google Translate Dropdown -->
     </div>
 </div>
 
@@ -710,17 +733,28 @@ header1 {
                 nestedMenu.style.display = "block";  // Open the submenu
             }
         }
+        
+      
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,te,hi,fr,de,es,zh,ta,ml,ur,ja',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
    
 
     </script>
+    <!-- Link to Google Translate API -->
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     </div>
     <footer role="contentinfo" style="display: flex; justify-content: space-between; align-items: center; font-size: 0.9em;">
     <p style="margin: 0;">Developed by Suresh Myathari</p>
     <span style="display: flex; align-items: center;">
-        <i class="fa fa-phone" style="margin-right: 5px;"></i>
+        
         <span>&copy; 2024 All Rights Reserved</span>
     </span>
-    <p style="margin: 0; text-align: center;">+91 (733) 066-9228</p>
+    <p style="margin: 0; text-align: center;"><i class="fa fa-phone" style="margin-right: 5px;"></i>+91 (733) 066-9228</p>
 </footer>
     <!-- <footer role="contentinfo">Mythical University footer information</footer> -->
 </body>
