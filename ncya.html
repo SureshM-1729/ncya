@@ -474,7 +474,37 @@ header1 {
              margin-top:2px;
             vertical-align:top;
             display:inline-block;
+            max-width:10px;
         }
+        .goog-te-gadget-simple .goog-te-menu-value span {
+    display: none;
+}
+
+.goog-te-gadget-simple:hover::after {
+    
+    position: absolute;
+    top: 100%; /* Position below the circle */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 0.7em;
+    white-space: nowrap;
+}
+.goog-te-gadget-simple {
+    width: 40px; /* Set the width for the circle */
+    height: 40px; /* Set the height for the circle */
+    border-radius: 50%; /* Make the box circular */
+    overflow: hidden;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f1f1f1; /* Optional: Add background color */
+    font-size: 0.8em; /* Adjust font size to fit */
+}
         
        
 
@@ -535,7 +565,7 @@ header1 {
         <!--<a href="#" class="link">
             <i class="fas fa-language"></i> Language
         </a> -->
-           <div id="google_translate_element"></div>
+           <i class="fa fa-language" style="font-size:20px;color:yellow"></i>&#8594;<div id="google_translate_element"></div>
         
         <!-- Google Translate Dropdown -->
     </div>
@@ -607,7 +637,7 @@ header1 {
             <li>
                 <div class="menu-item" onclick="toggleSubMenu('officersSubMenu')">
                     <span class="education-icon">
-    				<i class="material-icons">school</i>&nbsp;&nbsp;&nbsp;Education
+    				<i class="material-icons">school</i>&nbsp;&nbsp;&nbsp;Job's
 					</span>
                 </div>
                 <ul id="officersSubMenu" class="nested">
@@ -622,7 +652,7 @@ header1 {
             <li>
                 <div class="menu-item" onclick="toggleSubMenu('publicSubMenu')">
                     <span class="education-icon">
-    				<i class="material-icons">school</i>&nbsp;&nbsp;&nbsp;Education
+    				<i class="material-icons">school</i>&nbsp;&nbsp;&nbsp;Others
 					</span>
                 </div>
                 <ul id="publicSubMenu" class="nested">
