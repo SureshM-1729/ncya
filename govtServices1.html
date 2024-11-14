@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Govt Services </title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            padding-top: 20px;
+        }
+
+        /* Sticky header */
+        header {
+            background-color: white;
+            color: black;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            max-height:70px;
+        }
+
+        .search-container {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .search-container input {
+            width: 50%;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+             margin-top: 20px;
+        }
+
+        /* Default site card styling */
+        .site-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 3px solid #dee2e6; /* Light grey border for site cards */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .site-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header in site card */
+        .site-card-header {
+            background-color: white;
+            color: black;
+            padding: 20px;
+            border-radius: 8px 8px 0 0;
+            border-bottom: 3px solid #dee2e6;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: left;
+            width: 100%;
+        }
+
+        .site-card-header img {
+            max-width: 50px;
+            height: auto;
+            margin-right: 20px;
+        }
+
+        .site-card-header div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 20px; /* Increased margin to add more space */
+        }
+
+        .site-card-header div h5 {
+            margin-bottom: 10px; /* Add space below the heading */
+        }
+
+        .site-card-header div a {
+            font-size: 1.1rem;
+            color: #007bff;
+            text-decoration: none;
+            margin-top: 5px;
+        }
+
+        .site-card-header div a:hover {
+            color: #0056b3;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 1rem;
+            margin-top: 30px;
+            border-top: 3px solid #007bff;
+        }
+
+        .no-results {
+            color: red;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Site card container: Grid layout with 2 cards per row on desktop */
+        .site-card-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 columns for desktop */
+            gap: 20px;
+        }
+
+        /* Mobile responsiveness: 1 card per row on small screens */
+        @media (max-width: 768px) {
+            .site-card-container {
+                grid-template-columns: 1fr; /* 1 column on small screens */
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Govt Services</h1>
+    </header>
+
+    <!-- Search Bar Section -->
+    <div class="container search-container">
+        <input type="text" id="search-bar" class="form-control" placeholder="Search official sites..." oninput="filterSites()">
+    </div>
+
+    <!-- Sites List Section -->
+    <div class="container site-card-container" id="site-list">
+        <!-- Meeseva -->
+        <div class="site-card" data-site-name="Meeseva">
+            <div class="site-card-header">
+<img _ngcontent-ng-c3992367519="" width="70" loading="lazy" fetchpriority="high" alt="" src="https://media.umangapp.in/app/ico/service/tnMeeseva1.png">                <div>
+                    <h5>Meeseva Portal</h5>
+                    <a href="https://ts.meeseva.telangana.gov.in/" target="_blank">Visit Meeseva Portal</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Aadhar -->
+        <div class="site-card" data-site-name="Aadhar">
+            <div class="site-card-header">
+                <img src="https://media.umangapp.in/app/ico/service/aadhaar1.png" alt="Aadhar Card">
+                <div>
+                    <h5>Aadhar Card Services</h5>
+                    <a href="https://uidai.gov.in" target="_blank">Visit Aadhar Card Portal</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rythu Bandhu -->
+        <div class="site-card" data-site-name="Rythu Bandhu">
+            <div class="site-card-header">
+<img _ngcontent-ng-c1047300340="" loading="lazy" fetchpriority="high" width="45" height="35" alt="" src="https://media.umangapp.in/app/ico/service/367.png">                <div>
+                    <h5>T-Ration (Telangana)</h5>
+                    <a href="https://rythubandhu.telangana.gov.in" target="_blank">Visit Ration Card Portal</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- E-District -->
+        <div class="site-card" data-site-name="E-District">
+            <div class="site-card-header">
+                <img src="https://example.com/edistrict.png" alt="E-District">
+                <div>
+                    <h5>E-District Portal</h5>
+                    <a href="https://edistrict.telangana.gov.in" target="_blank">Visit E-District Portal</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional site cards can follow the same structure... -->
+
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Useful Official Sites. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+    <!-- Custom JavaScript for Search Filter -->
+    <script>
+        // Filter function for search
+        function filterSites() {
+            const query = document.getElementById('search-bar').value.toLowerCase();
+            const sites = document.querySelectorAll('.site-card');
+            let foundAny = false;
+
+            sites.forEach(site => {
+                const siteName = site.getAttribute('data-site-name').toLowerCase();
+                if (siteName.includes(query)) {
+                    site.style.display = 'block'; // Show matching site
+                    foundAny = true;
+                } else {
+                    site.style.display = 'none'; // Hide non-matching site
+                }
+            });
+
+            // Show "No results found" if no matches
+            const noResultsMessage = document.getElementById('no-results');
+            if (foundAny) {
+                noResultsMessage.style.display = 'none';
+            } else {
+                noResultsMessage.style.display = 'block';
+            }
+        }
+    </script>
+
+</body>
+
+</html>
