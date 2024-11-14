@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vocational Courses </title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
     <!-- Font Awesome for Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet"
@@ -143,6 +142,38 @@
             text-align: center;
             animation: blink 2s step-start infinite;
         }
+        
+        
+        .search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Adjust spacing from top */
+}
+
+.search-bar input {
+    width: 80%; /* Adjust width, can change based on screen size */
+    max-width: 500px; /* Ensure it doesn't get too wide */
+    padding: 5px;
+    font-size: 16px;
+    border: 2px solid #007bff; /* Blue border color */
+    border-radius: 50px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.search-bar input:focus {
+    border-color: #0056b3; /* Darker blue when focused */
+    box-shadow: 0 0 8px rgba(0, 86, 179, 0.4); /* Glow effect on focus */
+}
+
+.search-bar input::placeholder {
+    color: #777; /* Lighter color for placeholder text */
+    font-size: 16px;
+}
+        
+        
     </style>
 </head>
 
@@ -165,13 +196,19 @@
             <strong style='color: white;'>SURESH MYATHARI <i class="fas fa-smile" style='font-size: 20px; color: yellow'></i></strong>
         </div>
         <div class="marquee">
-            <strong>Welcome to N C Y A! Check out our latest updates and more.</strong>
+            <strong>Welcome to Vocational Courses Check out our latest updates and more.</strong>
         </div>
         <div class="header-top-right">
             <a href="ncya.html" class="link">Home</a> 
             <a href="index.html" class="link">Logout</a>
         </div>
     </div>
+     
+
+<!-- Search Bar -->
+<div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search for courses..." onkeyup="filterCourses()">
+</div>
 
     <!-- Courses Section -->
     <div class="container" id="courses">
@@ -468,6 +505,21 @@
     <!-- Bootstrap JS and Popper -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+     <script>
+        function filterCourses() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let courses = document.getElementsByClassName('course-card');
+            
+            for (let i = 0; i < courses.length; i++) {
+                let title = courses[i].getElementsByClassName('course-card-header')[0].textContent.toLowerCase();
+                if (title.includes(input)) {
+                    courses[i].style.display = '';
+                } else {
+                    courses[i].style.display = 'none';
+                }
+            }
+        }
+    </script>
 
 </body>
 

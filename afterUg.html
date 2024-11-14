@@ -132,6 +132,17 @@
             text-align: center;
             animation: blink 2s step-start infinite;
         }
+        @keyframes blink {
+            0% {
+                visibility: visible;
+            }
+            50% {
+                visibility: hidden;
+            }
+            100% {
+                visibility: visible;
+            }
+        }
          header1 {
             background: #0056b3;
             color: #fff;
@@ -147,7 +158,7 @@
             <img src="assets\Images\temple.jpg" alt="Description of image" style="height: 50px; width: auto; border-radius: 30px;">
         </div>
         
-        <div class="title" style="flex: 2; text-align: center; font-size: 14px; color: white;">NAVA CHAITHANYA YUVAJANA ASSOCIATION</div>
+        <div class="title" style="flex: 2; text-align: center; font-size: 14px;font-weight:bold; color: white;">NAVA CHAITHANYA YUVAJANA ASSOCIATION</div>
         <div class="header-image" style="flex-shrink: 0;">
             <img src="assets\Images\ncyaLogo.jpg" alt="Description of image" style="height: 50px; width: auto; border-radius: 60px;">
         </div>
