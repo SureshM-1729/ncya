@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" tyep="text/css" href="style.css" />
+    <title>Exams and Eligibility</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #2C3E50; /* Professional shade */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            height: 100px;
+        }
+        section {
+            margin: 20px;
+        }
+        h2, h3 {
+            color: #2C3E50; /* Matching header color */
+        }
+        .category {
+            margin-bottom: 40px;
+            border-radius: 8px;
+            padding: 20px;
+        }
+        .category-header {
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        .category .card {
+            border: 2px solid #f4f4f9;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            height: 100%; /* Ensures all cards are the same height */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .category .card-header {
+            background-color: #34495E; /* Subtle dark blue-gray */
+            color: white;
+            font-weight: bold;
+            padding: 12px;
+            border-radius: 5px;
+            font-size: 1.2em;
+        }
+        .category .card-body {
+            flex-grow: 1;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            margin-top: 40px;
+        }
+        .category .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        .category .col-md-4 {
+            margin-bottom: 20px;
+        }
+
+        /* Category colors */
+        .engineering { border: 3px solid #FF5733; }
+        .management { border: 3px solid #33C3FF; }
+        .telangana { border: 3px solid #8BC34A; }
+        .architecture { border: 3px solid #9C27B0; }
+        .design { border: 3px solid #FF9800; }
+        .hotel { border: 3px solid #607D8B; }
+        .journalism { border: 3px solid #795548; }
+        .other-exams { border: 3px solid #00BCD4; }
+        .law { border: 3px solid #673AB7; }
+        .medical { border: 3px solid #009688; }
+        .science { border: 3px solid #8BC34A; }
+        .social-science { border: 3px solid #FF9800; }
+        
+
+        /* Category Header with matching border color */
+        .engineering .category-header { background-color: #FF5733; }
+        .management .category-header { background-color: #33C3FF; }
+        .telangana .category-header { background-color: #8BC34A; }
+        .architecture .category-header { background-color: #9C27B0; }
+        .design .category-header { background-color: #FF9800; }
+        .hotel .category-header { background-color: #607D8B; }
+        .journalism .category-header { background-color: #795548; }
+        .other-exams .category-header { background-color: #00BCD4; }
+        .law .category-header { background-color: #673AB7; }
+        .medical .category-header { background-color: #009688; }
+        .science .category-header { background-color: #8BC34A; }
+        .social-science .category-header { background-color: #FF9800; }
+
+        /* Button Styling */
+        .btn {
+            background-color: #3498DB; /* Stylish blue */
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #2980B9; /* Darker blue on hover */
+            transform: scale(1.05);
+        }
+        .btn:focus {
+            outline: none;
+        }
+
+        /* Add some spacing for the exam info */
+        .exam-info {
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 10px;
+        }
+        .exam-info span {
+            font-weight: bold;
+        }
+
+        /* Search Bar Styling */
+        .search-container {
+            margin: 20px;
+            text-align: center;
+        }
+        .search-container input[type="text"] {
+            padding: 12px 20px;
+            font-size: 1em;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 5px;
+            border: 2px solid #ccc;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        .search-container input[type="text"]:focus {
+            outline: none;
+            border-color: #3498DB;
+        }
+        #no-results {
+            text-align: center;
+            font-size: 1.2em;
+            color: #e74c3c;
+            display: none;
+        }
+        .header-topp {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #232f3e;
+            font-size: 14px;
+        }
+
+        .header-topp a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+
+        <div class="header-topp">
+        <div class="header-top-left">
+            <strong style='color: white;'>SURESH MYATHARI <i class="fas fa-smile" style='font-size: 20px; color: yellow'></i></strong>
+        </div>
+        <div class="marquee">
+            <strong>Welcome to N C Y A! Check out our latest updates and more.</strong>
+        </div>
+        <div class="header-top-right">
+            <a href="ncya.html" class="link">Home</a> 
+            <a href="index.html" class="link">Logout</a>
+        </div>
+    </div>
+
+    <div class="search-container">
+        <input type="text" id="search-bar" oninput="filterExams()" placeholder="Search by exam name or category..." />
+        <div id="no-results">No results found</div>
+    </div>
+
+    <section class="container">
+        <!-- Engineering & Technology -->
+<div class="category engineering" data-category-title="engineering & technology">
+    <h2 class="category-header">1. Engineering & Technology</h2>
+    <div class="row">
+        <div class="col-md-4 col-sm-6">
+            <div class="card" data-job-title="JEE Main">
+                <div class="card-body">
+                    <div class="card-header">JEE Main</div>
+                    <p>For admission to BTech/BE programs in IITs, NITs, and other institutions across India.</p>
+                    <strong>Eligibility:</strong>
+                    <p>Passed 12th with Physics, Chemistry, and Mathematics. Minimum 75% in 12th.</p>
+                    <strong>Duration:</strong>
+                    <p>4 years (for BTech/BE)</p>
+                    <button class="btn btn-success" onclick="window.open('https://jeemain.nta.nic.in/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" data-job-title="JEE Advanced">
+                <div class="card-body">
+                    <div class="card-header">JEE Advanced</div>
+                    <p>For admission to IITs after clearing JEE Main.</p>
+                    <strong>Eligibility:</strong>
+                    <p>Must have cleared JEE Main with top rank. Must have passed 12th with Physics, Chemistry, and Mathematics.</p>
+                    <strong>Duration:</strong>
+                    <p>4 years (for BTech/BE)</p>
+                    <button class="btn btn-success" onclick="window.open('https://jeeadv.ac.in/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" data-job-title="BITSAT">
+                <div class="card-body">
+                    <div class="card-header">BITSAT</div>
+                    <p>For admission to BTech courses at BITS Pilani and its campuses.</p>
+                    <strong>Eligibility:</strong>
+                    <p>Passed 12th with Physics, Chemistry, and Mathematics/Biology. Minimum 75% in 12th.</p>
+                    <strong>Duration:</strong>
+                    <p>4 years (for BTech)</p>
+                    <button class="btn btn-success" onclick="window.open('https://www.bitsadmission.com/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" data-job-title="IMU CET">
+                <div class="card-body">
+                    <div class="card-header">IMU CET</div>
+                    <p>For admission to undergraduate and postgraduate programs at Indian Maritime University (IMU), including courses related to maritime studies and engineering.</p>
+                    <strong>Eligibility:</strong>
+                    <p>Passed 12th with Physics, Chemistry, and Mathematics. Minimum 60% in 12th.</p>
+                    <strong>Duration:</strong>
+                    <p>3 years (for BTech)</p>
+                    <button class="btn btn-success" onclick="window.open('https://imu.edu.in/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Medical -->
+<div class="category medical" data-category-title="medical">
+    <h2 class="category-header">2. Medical</h2>
+    <div class="row">
+        <div class="col-md-4 col-sm-6">
+            <div class="card" data-job-title="NEET UG">
+                <div class="card-body">
+                    <div class="card-header">NEET UG</div>
+                    <p>For MBBS/BDS programs in government and private medical colleges in India.</p>
+                    <strong>Eligibility:</strong>
+                    <p>Passed 12th with Physics, Chemistry, and Biology. Minimum 50% in 12th.</p>
+                    <strong>Duration:</strong>
+                    <p>5.5 years (MBBS)</p>
+                    <button class="btn btn-success" onclick="window.open('https://neet.nta.nic.in/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" data-job-title="AIIMS UG">
+                <div class="card-body">
+                    <div class="card-header">AIIMS UG</div>
+                    <p>For admission to MBBS in AIIMS campuses across India.</p>
+                    <strong>Eligibility:</strong>
+                    <p>Passed 12th with Physics, Chemistry, and Biology. Minimum 60% in 12th.</p>
+                    <strong>Duration:</strong>
+                    <p>5.5 years (MBBS)</p>
+                    <button class="btn btn-success" onclick="window.open('https://www.aiimsexams.ac.in/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" data-job-title="JIPMER UG">
+                <div class="card-body">
+                    <div class="card-header">JIPMER UG</div>
+                    <p>For MBBS programs at JIPMER, Puducherry.</p>
+                    <strong>Eligibility:</strong>
+                    <p>Passed 12th with Physics, Chemistry, and Biology. Minimum 50% in 12th.</p>
+                    <strong>Duration:</strong>
+                    <p>5.5 years (MBBS)</p>
+                    <button class="btn btn-success" onclick="window.open('https://jipmer.edu.in/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Management -->
+<div class="category management" data-category-title="management">
+    <h2 class="category-header">3. Management</h2>
+    <div class="row">
+        <div class="col-md-4 col-sm-6">
+            <div class="card" data-job-title="JEE Main">
+                <div class="card-body">
+                    <div class="card-header">JEE Main</div>
+                    <p>For admission to BBA and MBA programs in various institutes.</p>
+                    <strong>Eligibility:</strong>
+                    <p>Passed 12th with any stream (arts, commerce, science).</p>
+                    <strong>Duration:</strong>
+                    <p>3 years (for BBA)</p>
+                    <button class="btn btn-success" onclick="window.open('https://jeemain.nta.nic.in/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" data-job-title="IPMAT">
+                <div class="card-body">
+                    <div class="card-header">IPMAT</div>
+                    <p>For admission to Integrated Program in Management (IPM) at IIM Indore and other IIMs.</p>
+                    <strong>Eligibility:</strong>
+                    <p>Passed 12th with 60% (General category) or 55% (reserved categories).</p>
+                    <strong>Duration:</strong>
+                    <p>5 years (IPM)</p>
+                    <button class="btn btn-success" onclick="window.open('https://www.iimidr.ac.in/academics/ipm/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" data-job-title="DU JAT">
+                <div class="card-body">
+                    <div class="card-header">DU JAT</div>
+                    <p>For admission to BBA/BMS in Delhi University.</p>
+                    <strong>Eligibility:</strong>
+                    <p>Passed 12th with minimum 60% marks (General category).</p>
+                    <strong>Duration:</strong>
+                    <p>3 years (for BBA)</p>
+                    <button class="btn btn-success" onclick="window.open('http://www.du.ac.in/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Law -->
+<div class="category law" data-category-title="law">
+    <h2 class="category-header">4. Law</h2>
+    <div class="row">
+        <div class="col-md-4 col-sm-6">
+            <div class="card" data-job-title="CLAT">
+                <div class="card-body">
+                    <div class="card-header">CLAT</div>
+                    <p>For admission to UG and PG law programs in National Law Universities (NLUs) across India.</p>
+                    <strong>Eligibility:</strong>
+                    <p>Passed 12th with minimum 45% (General category) in any stream.</p>
+                    <strong>Duration:</strong>
+                    <p>5 years (for BA LLB)</p>
+                    <button class="btn btn-success" onclick="window.open('https://consortiumofnlus.ac.in/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" data-job-title="LSAT India">
+                <div class="card-body">
+                    <div class="card-header">LSAT India</div>
+                    <p>For admission to undergraduate and postgraduate law programs.</p>
+                    <strong>Eligibility:</strong>
+                    <p>Passed 12th (for UG) or graduation (for PG).</p>
+                    <strong>Duration:</strong>
+                    <p>5 years (for BA LLB)</p>
+                    <button class="btn btn-success" onclick="window.open('https://www.pearsonvueindia.com/lsatindia/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" data-job-title="AILET">
+                <div class="card-body">
+                    <div class="card-header">AILET</div>
+                    <p>For admission to BA LLB program at NLU Delhi.</p>
+                    <strong>Eligibility:</strong>
+                    <p>Passed 12th with minimum 50% marks.</p>
+                    <strong>Duration:</strong>
+                    <p>5 years (for BA LLB)</p>
+                    <button class="btn btn-success" onclick="window.open('https://nludelhi.ac.in/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Architecture -->
+<div class="category design" data-category-title="architecture">
+    <h2 class="category-header">5. Architecture</h2>
+    <div class="row">
+        <div class="col-md-4 col-sm-6">
+            <div class="card" data-job-title="NATA">
+                <div class="card-body">
+                    <div class="card-header">NATA</div>
+                    <p>For admission to B.Arch programs in various institutions in India.</p>
+                    <strong>Eligibility:</strong>
+                    <p>Passed 12th with Mathematics as a subject. Minimum 50% in 12th.</p>
+                    <strong>Duration:</strong>
+                    <p>5 years (for B.Arch)</p>
+                    <button class="btn btn-success" onclick="window.open('https://www.nata.in/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" data-job-title="JEE Main (B.Arch)">
+                <div class="card-body">
+                    <div class="card-header">JEE Main (B.Arch)</div>
+                    <p>For admission to B.Arch programs at NITs, IITs, and other institutions across India.</p>
+                    <strong>Eligibility:</strong>
+                    <p>Passed 12th with Mathematics as a subject. Minimum 75% in 12th (for IITs/NITs).</p>
+                    <strong>Duration:</strong>
+                    <p>5 years (for B.Arch)</p>
+                    <button class="btn btn-success" onclick="window.open('https://jeemain.nta.nic.in/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Design -->
+<div class="category design" data-category-title="design">
+    <h2 class="category-header">6. Design</h2>
+    <div class="row">
+        <div class="col-md-4 col-sm-6">
+            <div class="card" data-job-title="NID DAT">
+                <div class="card-body">
+                    <div class="card-header">NID DAT</div>
+                    <p>For admission to Bachelor of Design (B.Des) programs at National Institute of Design (NID).</p>
+                    <strong>Eligibility:</strong>
+                    <p>Passed 12th with any stream. No specific percentage required.</p>
+                    <strong>Duration:</strong>
+                    <p>4 years (for B.Des)</p>
+                    <button class="btn btn-success" onclick="window.open('https://www.nid.edu/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" data-job-title="UCEED">
+                <div class="card-body">
+                    <div class="card-header">UCEED</div>
+                    <p>For admission to B.Des programs at IITs and other design institutes across India.</p>
+                    <strong>Eligibility:</strong>
+                    <p>Passed 12th in any stream. Minimum 50% in 12th.</p>
+                    <strong>Duration:</strong>
+                    <p>4 years (for B.Des)</p>
+                    <button class="btn btn-success" onclick="window.open('https://www.uceed.iitb.ac.in/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" data-job-title="AIEED">
+                <div class="card-body">
+                    <div class="card-header">AIEED</div>
+                    <p>For admission to undergraduate and postgraduate programs in design at ARCH Academy of Design.</p>
+                    <strong>Eligibility:</strong>
+                    <p>Passed 12th or equivalent in any stream.</p>
+                    <strong>Duration:</strong>
+                    <p>3-4 years (depending on program)</p>
+                    <button class="btn btn-success" onclick="window.open('https://www.aieed.com/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Hotel Management & Tourism -->
+<div class="category hotel" data-category-title="hotel-management">
+    <h2 class="category-header">7. Hotel Management & Tourism</h2>
+    <div class="row">
+        <div class="col-md-4 col-sm-6">
+            <div class="card" data-job-title="NCHM JEE">
+                <div class="card-body">
+                    <div class="card-header">NCHM JEE</div>
+                    <p>For admission to Hotel Management programs at Institutes of Hotel Management (IHMs) across India.</p>
+                    <strong>Eligibility:</strong>
+                    <p>Passed 12th with any stream. Minimum 50% in 12th.</p>
+                    <strong>Duration:</strong>
+                    <p>3 years (for BHMCT)</p>
+                    <button class="btn btn-success" onclick="window.open('https://nchmjee.nta.nic.in/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" data-job-title="IIHM eCHAT">
+                <div class="card-body">
+                    <div class="card-header">IIHM eCHAT</div>
+                    <p>For admission to Hotel Management programs at International Institute of Hotel Management (IIHM) across India.</p>
+                    <strong>Eligibility:</strong>
+                    <p>Passed 12th with any stream. Minimum 50% in 12th.</p>
+                    <strong>Duration:</strong>
+                    <p>3 years (for BHM)</p>
+                    <button class="btn btn-success" onclick="window.open('https://iihm.ac.in/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" data-job-title="AIHMCT Entrance Exam">
+                <div class="card-body">
+                    <div class="card-header">AIHMCT Entrance Exam</div>
+                    <p>For admission to Hotel Management programs at Amity Institute of Hospitality Management (AIHMCT).</p>
+                    <strong>Eligibility:</strong>
+                    <p>Passed 12th with any stream.</p>
+                    <strong>Duration:</strong>
+                    <p>3 years (for BHM)</p>
+                    <button class="btn btn-success" onclick="window.open('https://www.amity.edu/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Journalism & Mass Communication -->
+<div class="category law" data-category-title="journalism-mass-communication">
+    <h2 class="category-header">8. Journalism & Mass Communication</h2>
+    <div class="row">
+        <div class="col-md-4 col-sm-6">
+            <div class="card" data-job-title="CUCET">
+                <div class="card-body">
+                    <div class="card-header">CUCET</div>
+                    <p>For admission to various undergraduate programs including Journalism at Central Universities.</p>
+                    <strong>Eligibility:</strong>
+                    <p>Passed 12th with any stream.</p>
+                    <strong>Duration:</strong>
+                    <p>3 years (for BA Journalism)</p>
+                    <button class="btn btn-success" onclick="window.open('https://cucet.nta.nic.in/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" data-job-title="IPU CET">
+                <div class="card-body">
+                    <div class="card-header">IPU CET</div>
+                    <p>For admission to Journalism and Mass Communication programs at Guru Gobind Singh Indraprastha University (GGSIPU) and affiliated institutes.</p>
+                    <strong>Eligibility:</strong>
+                    <p>Passed 12th with any stream.</p>
+                    <strong>Duration:</strong>
+                    <p>3 years (for BJMC)</p>
+                    <button class="btn btn-success" onclick="window.open('https://ipu.ac.in/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" data-job-title="Symbiosis SET">
+                <div class="card-body">
+                    <div class="card-header">Symbiosis SET</div>
+                    <p>For admission to Journalism programs at Symbiosis Institute of Media and Communication (SIMC).</p>
+                    <strong>Eligibility:</strong>
+                    <p>Passed 12th with any stream.</p>
+                    <strong>Duration:</strong>
+                    <p>3 years (for BJMC)</p>
+                    <button class="btn btn-success" onclick="window.open('https://www.set-test.org/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Science -->
+<div class="category science" data-category-title="science">
+    <h2 class="category-header">9. Science</h2>
+    <div class="row">
+        <div class="col-md-4 col-sm-6">
+            <div class="card" data-job-title="JEST">
+                <div class="card-body">
+                    <div class="card-header">JEST</div>
+                    <p>For admission to PhD and Integrated PhD programs in Physics at various research institutes in India.</p>
+                    <strong>Eligibility:</strong>
+                    <p>Completed 12th with Physics, Chemistry, and Mathematics/Biology. Bachelor's degree in Science for PG courses.</p>
+                    <strong>Duration:</strong>
+                    <p>Varies based on program.</p>
+                    <button class="btn btn-success" onclick="window.open('https://www.jest.org.in/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" data-job-title="NEET">
+                <div class="card-body">
+                    <div class="card-header">NEET</div>
+                    <p>For admission to undergraduate medical courses, including programs in Life Sciences and Biology.</p>
+                    <strong>Eligibility:</strong>
+                    <p>12th pass with Physics, Chemistry, Biology as subjects.</p>
+                    <strong>Duration:</strong>
+                    <p>5.5 years (MBBS program)</p>
+                    <button class="btn btn-success" onclick="window.open('https://neet.nta.nic.in/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" data-job-title="ISI Entrance Exam">
+                <div class="card-body">
+                    <div class="card-header">ISI Entrance Exam</div>
+                    <p>For admission to undergraduate, postgraduate, and research programs at Indian Statistical Institute (ISI), Kolkata.</p>
+                    <strong>Eligibility:</strong>
+                    <p>For undergraduate programs: Passed 12th with Mathematics and Science subjects. For postgraduate programs: Graduation in a relevant field.</p>
+                    <strong>Duration:</strong>
+                    <p>3 years (for BStat/BMath), 2 years (for MSc)</p>
+                    <button class="btn btn-success" onclick="window.open('https://www.isical.ac.in/entrance/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" data-job-title="NISER">
+                <div class="card-body">
+                    <div class="card-header">NISER</div>
+                    <p>For admission to integrated MSc programs in basic sciences at National Institute of Science Education and Research (NISER), Bhubaneswar.</p>
+                    <strong>Eligibility:</strong>
+                    <p>Passed 12th with Physics, Chemistry, and Mathematics/Biology. Minimum 60% in 12th.</p>
+                    <strong>Duration:</strong>
+                    <p>5 years (Integrated MSc)</p>
+                    <button class="btn btn-success" onclick="window.open('https://www.niser.ac.in/admission', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" data-job-title="IISER">
+                <div class="card-body">
+                    <div class="card-header">IISER</div>
+                    <p>For admission to integrated MSc programs in basic sciences at Indian Institutes of Science Education and Research (IISERs).</p>
+                    <strong>Eligibility:</strong>
+                    <p>Passed 12th with Physics, Chemistry, and Mathematics/Biology. Minimum 60% in 12th.</p>
+                    <strong>Duration:</strong>
+                    <p>5 years (Integrated MSc)</p>
+                    <button class="btn btn-success" onclick="window.open('https://www.iiseradmission.in/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Social Science & Humanities -->
+<div class="category social-science" data-category-title="social-science-humanities">
+    <h2 class="category-header">10. Social Science & Humanities</h2>
+    <div class="row">
+        <div class="col-md-4 col-sm-6">
+            <div class="card" data-job-title="CUCET">
+                <div class="card-body">
+                    <div class="card-header">CUCET</div>
+                    <p>For admission to undergraduate and postgraduate programs in Social Science and Humanities at Central Universities.</p>
+                    <strong>Eligibility:</strong>
+                    <p>Passed 12th with any stream (arts, science, commerce).</p>
+                    <strong>Duration:</strong>
+                    <p>3 years (for BA/BSc)</p>
+                    <button class="btn btn-success" onclick="window.open('https://cucet.nta.nic.in/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" data-job-title="IPU CET">
+                <div class="card-body">
+                    <div class="card-header">IPU CET</div>
+                    <p>For admission to BA and MA programs in Social Sciences and Humanities at Guru Gobind Singh Indraprastha University (GGSIPU).</p>
+                    <strong>Eligibility:</strong>
+                    <p>Passed 12th with relevant subjects for undergraduate; graduation for MA programs.</p>
+                    <strong>Duration:</strong>
+                    <p>3 years (for BA); 2 years (for MA)</p>
+                    <button class="btn btn-success" onclick="window.open('https://ipu.ac.in/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" data-job-title="DUET">
+                <div class="card-body">
+                    <div class="card-header">DUET</div>
+                    <p>For admission to various Humanities and Social Science programs at Delhi University.</p>
+                    <strong>Eligibility:</strong>
+                    <p>Passed 12th with relevant subjects for undergraduate programs.</p>
+                    <strong>Duration:</strong>
+                    <p>3 years (for BA)</p>
+                    <button class="btn btn-success" onclick="window.open('https://exam.du.ac.in/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Exam Information. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function filterExams() {
+            const query = document.getElementById('search-bar').value.toLowerCase();
+            const categories = document.querySelectorAll('.category');
+            let foundAny = false;
+
+            categories.forEach(category => {
+                const categoryTitle = category.getAttribute('data-category-title').toLowerCase();
+                const cards = category.querySelectorAll('.card');
+                let categoryMatches = false;
+
+                cards.forEach(card => {
+                    const examTitle = card.getAttribute('data-job-title').toLowerCase();
+                    if (categoryTitle.includes(query) || examTitle.includes(query)) {
+                        card.style.display = 'block'; // Show matching exam
+                        categoryMatches = true;
+                        foundAny = true;
+                    } else {
+                        card.style.display = 'none'; // Hide non-matching exam
+                    }
+                });
+
+                // Show or hide category based on whether any exams match
+                if (categoryMatches || categoryTitle.includes(query)) {
+                    category.style.display = 'block';
+                } else {
+                    category.style.display = 'none';
+                }
+            });
+
+            // Show or hide "No results found" message
+            const noResultsMessage = document.getElementById('no-results');
+            if (foundAny) {
+                noResultsMessage.style.display = 'none';
+            } else {
+                noResultsMessage.style.display = 'block';
+            }
+        }
+    </script>
+
+</body>
+</html>

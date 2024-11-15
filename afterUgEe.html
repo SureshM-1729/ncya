@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" tyep="text/css" href="style.css" />
+    <title>Exams and Eligibility</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #2C3E50; /* Professional shade */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            height: 100px;
+        }
+        section {
+            margin: 20px;
+        }
+        h2, h3 {
+            color: #2C3E50; /* Matching header color */
+        }
+        .category {
+            margin-bottom: 40px;
+            border-radius: 8px;
+            padding: 20px;
+        }
+        .category-header {
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        .category .card {
+            border: 2px solid #f4f4f9;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            height: 100%; /* Ensures all cards are the same height */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .category .card-header {
+            background-color: #34495E; /* Subtle dark blue-gray */
+            color: white;
+            font-weight: bold;
+            padding: 12px;
+            border-radius: 5px;
+            font-size: 1.2em;
+        }
+        .category .card-body {
+            flex-grow: 1;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            margin-top: 40px;
+        }
+        .category .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        .category .col-md-4 {
+            margin-bottom: 20px;
+        }
+
+        /* Category colors */
+        .engineering { border: 3px solid #FF5733; }
+        .management { border: 3px solid #33C3FF; }
+        .telangana { border: 3px solid #8BC34A; }
+        .architecture { border: 3px solid #9C27B0; }
+        .design { border: 3px solid #FF9800; }
+        .hotel { border: 3px solid #607D8B; }
+        .journalism { border: 3px solid #795548; }
+        .other-exams { border: 3px solid #00BCD4; }
+        .law { border: 3px solid #673AB7; }
+        .medical { border: 3px solid #009688; }
+        .science { border: 3px solid #8BC34A; }
+        .social-science { border: 3px solid #FF9800; }
+
+        /* Category Header with matching border color */
+        .engineering .category-header { background-color: #FF5733; }
+        .management .category-header { background-color: #33C3FF; }
+        .telangana .category-header { background-color: #8BC34A; }
+        .architecture .category-header { background-color: #9C27B0; }
+        .design .category-header { background-color: #FF9800; }
+        .hotel .category-header { background-color: #607D8B; }
+        .journalism .category-header { background-color: #795548; }
+        .other-exams .category-header { background-color: #00BCD4; }
+        .law .category-header { background-color: #673AB7; }
+        .medical .category-header { background-color: #009688; }
+        .science .category-header { background-color: #8BC34A; }
+        .social-science .category-header { background-color: #FF9800; }
+
+        /* Button Styling */
+        .btn {
+            background-color: #3498DB; /* Stylish blue */
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #2980B9; /* Darker blue on hover */
+            transform: scale(1.05);
+        }
+        .btn:focus {
+            outline: none;
+        }
+
+        /* Add some spacing for the exam info */
+        .exam-info {
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 10px;
+        }
+        .exam-info span {
+            font-weight: bold;
+        }
+
+        /* Search Bar Styling */
+        .search-container {
+            margin: 20px;
+            text-align: center;
+        }
+        .search-container input[type="text"] {
+            padding: 12px 20px;
+            font-size: 1em;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 5px;
+            border: 2px solid #ccc;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        .search-container input[type="text"]:focus {
+            outline: none;
+            border-color: #3498DB;
+        }
+        #no-results {
+            text-align: center;
+            font-size: 1.2em;
+            color: #e74c3c;
+            display: none;
+        }
+        .header-topp {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #232f3e;
+            font-size: 14px;
+        }
+
+        .header-topp a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-topp">
+        <div class="header-top-left">
+            <strong style='color: white;'>SURESH MYATHARI <i class="fas fa-smile" style='font-size: 20px; color: yellow'></i></strong>
+        </div>
+        <div class="marquee">
+            <strong>After UG Entrance Exams! Check out our latest updates and more.</strong>
+        </div>
+        <div class="header-top-right">
+            <a href="ncya.html" class="link">Home</a> 
+            <a href="index.html" class="link">Logout</a>
+        </div>
+    </div>
+
+    <div class="search-container">
+        <input type="text" id="search-bar" oninput="filterExams()" placeholder="Search by exam name or category..." />
+        <div id="no-results">No results found</div>
+    </div>
+
+    <section class="container">
+        <!-- Engineering & Technology -->
+        <div class="category engineering" data-category-title="Engineering & Technology">
+            <h2 class="category-header">1. Engineering & Technology</h2>
+            <div class="row">
+                <div class="col-md-4 col-sm-6">
+                    <div class="card" data-job-title="GATE">
+                        <div class="card-header">Graduate Aptitude Test in Engineering (GATE)</div>
+                        <div class="card-body">
+                            <p>For MTech/ME programs in IITs, NITs, etc.</p>
+                            <div class="exam-info">
+                                <p><span>Eligibility:</span> Bachelor's degree in Engineering/Technology (4 years) or equivalent.</p>
+                                <p><span>Course Duration:</span> 2 years (MTech/ME).</p>
+                            </div>
+                            <button class="btn" onclick="window.open('https://gate.iitk.ac.in/', '_blank')">Visit Website</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="card" data-job-title="GRE">
+                        <div class="card-header">Graduate Record Examination (GRE)</div>
+                        <div class="card-body">
+                            <p>For MS/PhD abroad, especially in the USA.</p>
+                            <div class="exam-info">
+                                <p><span>Eligibility:</span> No specific eligibility; Bachelor's degree required for admission to graduate programs.</p>
+                                <p><span>Course Duration:</span> Typically 2 years for MS.</p>
+                            </div>
+                            <button class="btn" onclick="window.open('https://www.ets.org/gre', '_blank')">Visit Website</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="card" data-job-title="TANCET">
+                        <div class="card-header">Tamil Nadu Common Entrance Test (TANCET)</div>
+                        <div class="card-body">
+                            <p>For MTech courses in Tamil Nadu state universities.</p>
+                            <div class="exam-info">
+                                <p><span>Eligibility:</span> Bachelor's degree in relevant field.</p>
+                                <p><span>Course Duration:</span> 2 years (MTech).</p>
+                            </div>
+                            <button class="btn" onclick="window.open('http://www.tancet.in/', '_blank')">Visit Website</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Management Exams -->
+        <div class="category management" data-category-title="Management">
+            <h2 class="category-header">2. Management</h2>
+            <div class="row">
+                <div class="col-md-4 col-sm-6">
+                    <div class="card" data-job-title="CAT">
+                        <div class="card-header">Common Admission Test (CAT)</div>
+                        <div class="card-body">
+                            <p>For admission to MBA programs in India (IIMs, IITs, etc.).</p>
+                            <div class="exam-info">
+                                <p><span>Eligibility:</span> Bachelor's degree (any stream).</p>
+                                <p><span>Course Duration:</span> 2 years (MBA).</p>
+                            </div>
+                            <button class="btn" onclick="window.open('https://iimcat.ac.in/', '_blank')">Visit Website</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="card" data-job-title="GMAT">
+                        <div class="card-header">Graduate Management Admission Test (GMAT)</div>
+                        <div class="card-body">
+                            <p>For MBA programs abroad, including top US B-schools.</p>
+                            <div class="exam-info">
+                                <p><span>Eligibility:</span> Bachelor's degree.</p>
+                                <p><span>Course Duration:</span> Typically 2 years for MBA.</p>
+                            </div>
+                            <button class="btn" onclick="window.open('https://www.mba.com/', '_blank')">Visit Website</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+    <div class="card" data-job-title="XAT">
+        <div class="card-header">Xavier Aptitude Test (XAT)</div>
+        <div class="card-body">
+            <p>For MBA/PGDM courses in XLRI and other institutes.</p>
+            <div class="exam-info">
+                <p><span>Eligibility:</span> Graduate in any discipline from a recognized university.</p>
+                <p><span>Course Duration:</span> Typically 2 years for MBA/PGDM programs.</p>
+            </div>
+            <button class="btn" onclick="window.open('https://xatonline.in/', '_blank')">Visit Website</button>
+        </div>
+    </div>
+</div>
+                
+ </div>
+</div>
+
+<!-- Law -->
+<div class="category law" data-category-title="Law">
+    <h2 class="category-header">3. Law</h2>
+    <div class="row">
+        <div class="col-md-4 col-sm-6">
+            <div class="card" data-job-title="CLAT">
+                <div class="card-header">Common Law Admission Test (CLAT)</div>
+                <div class="card-body">
+                    <p>For LLM programs in NLUs and other law colleges.</p>
+                    <div class="exam-info">
+                        <p><span>Eligibility:</span> Bachelor's degree in any stream (for LLM programs).</p>
+                        <p><span>Course Duration:</span> 1-2 years (LLM).</p>
+                    </div>
+                    <button class="btn btn-success" onclick="window.open('https://consortiumofnlus.ac.in/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" data-job-title="LSAT">
+                <div class="card-header">Law School Admission Test (LSAT)</div>
+                <div class="card-body">
+                    <p>For admission to law schools in India and abroad.</p>
+                    <div class="exam-info">
+                        <p><span>Eligibility:</span> No specific eligibility; typically a Bachelor's degree required for LLM programs.</p>
+                        <p><span>Course Duration:</span> 2-5 years depending on the program (LLB/LLM).</p>
+                    </div>
+                    <button class="btn btn-success" onclick="window.open('https://www.lsac.org/lsat', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" data-job-title="AILET">
+                <div class="card-header">All India Law Entrance Test (AILET)</div>
+                <div class="card-body">
+                    <p>For 5-year integrated law programs at National Law University, Delhi.</p>
+                    <div class="exam-info">
+                        <p><span>Eligibility:</span> 10+2 qualification for undergraduate programs.</p>
+                        <p><span>Course Duration:</span> 5 years (Integrated BA LLB).</p>
+                    </div>
+                    <button class="btn btn-success" onclick="window.open('https://nludelhi.ac.in/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Medical & Healthcare -->
+<div class="category medical" data-category-title="Medical & Healthcare">
+    <h2 class="category-header">4. Medical & Healthcare</h2>
+    <div class="row">
+        <div class="col-md-4 col-sm-6">
+            <div class="card" data-job-title="NEET PG">
+                <div class="card-header">NEET PG</div>
+                <div class="card-body">
+                    <p>For MD/MS and diploma courses in medical colleges in India.</p>
+                    <div class="exam-info">
+                        <p><span>Eligibility:</span> MBBS degree or equivalent.</p>
+                        <p><span>Course Duration:</span> 3 years (MD/MS), varies for diplomas.</p>
+                    </div>
+                    <button class="btn btn-success" onclick="window.open('https://neet.nta.nic.in/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" data-job-title="AIIMS PG">
+                <div class="card-header">AIIMS PG</div>
+                <div class="card-body">
+                    <p>For postgraduate medical programs at AIIMS across India.</p>
+                    <div class="exam-info">
+                        <p><span>Eligibility:</span> MBBS degree from a recognized institution.</p>
+                        <p><span>Course Duration:</span> 3 years (MD/MS), varies for diplomas.</p>
+                    </div>
+                    <button class="btn btn-success" onclick="window.open('https://www.aiimsexams.ac.in/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" data-job-title="JIPMER PG">
+                <div class="card-header">JIPMER PG</div>
+                <div class="card-body">
+                    <p>For MD/MS programs in JIPMER, Puducherry.</p>
+                    <div class="exam-info">
+                        <p><span>Eligibility:</span> MBBS degree or equivalent.</p>
+                        <p><span>Course Duration:</span> 3 years (MD/MS).</p>
+                    </div>
+                    <button class="btn btn-success" onclick="window.open('https://jipmer.edu.in/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Science -->
+<div class="category science" data-category-title="Science">
+    <h2 class="category-header">5. Science</h2>
+    <div class="row">
+        <div class="col-md-4 col-sm-6">
+            <div class="card" data-job-title="CSIR-UGC NET">
+                <div class="card-header">CSIR-UGC NET</div>
+                <div class="card-body">
+                    <p>For research fellowship (JRF) and lectureship in science subjects.</p>
+                    <div class="exam-info">
+                        <p><span>Eligibility:</span> Postgraduate degree in science or related fields.</p>
+                        <p><span>Course Duration:</span> Varies based on fellowship or lectureship program.</p>
+                    </div>
+                    <button class="btn btn-success" onclick="window.open('https://csirhrdg.res.in/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" data-job-title="GATE">
+                <div class="card-header">GATE</div>
+                <div class="card-body">
+                    <p>For MTech/PhD in science and technology fields.</p>
+                    <div class="exam-info">
+                        <p><span>Eligibility:</span> Bachelor's degree in engineering or science.</p>
+                        <p><span>Course Duration:</span> 2 years (MTech), varies for PhD programs.</p>
+                    </div>
+                    <button class="btn btn-success" onclick="window.open('https://gate.iitk.ac.in/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" data-job-title="JEST">
+                <div class="card-header">JEST</div>
+                <div class="card-body">
+                    <p>For PhD programs in physics at various institutes.</p>
+                    <div class="exam-info">
+                        <p><span>Eligibility:</span> Master's degree in physics or related fields.</p>
+                        <p><span>Course Duration:</span> 5-6 years (PhD).</p>
+                    </div>
+                    <button class="btn btn-success" onclick="window.open('https://www.jest.org.in/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Social Science & Humanities -->
+<div class="category social-science" data-category-title="Social Science & Humanities">
+    <h2 class="category-header">6. Social Science & Humanities</h2>
+    <div class="row">
+        <div class="col-md-4 col-sm-6">
+            <div class="card" data-job-title="UGC NET">
+                <div class="card-header">UGC NET</div>
+                <div class="card-body">
+                    <p>For assistant professor eligibility and JRF in humanities and social sciences.</p>
+                    <div class="exam-info">
+                        <p><span>Eligibility:</span> Postgraduate degree in humanities or social sciences.</p>
+                        <p><span>Course Duration:</span> Varies based on the fellowship or lectureship program.</p>
+                    </div>
+                    <button class="btn btn-success" onclick="window.open('https://ugcnet.nta.nic.in/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" data-job-title="TISSNET">
+                <div class="card-header">TISSNET</div>
+                <div class="card-body">
+                    <p>For postgraduate programs in social work, public health, HR, etc., at TISS.</p>
+                    <div class="exam-info">
+                        <p><span>Eligibility:</span> Bachelor's degree from a recognized institution.</p>
+                        <p><span>Course Duration:</span> 2 years (Postgraduate Programs).</p>
+                    </div>
+                    <button class="btn btn-success" onclick="window.open('https://www.tiss.edu/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" data-job-title="JNU Entrance Exam">
+                <div class="card-header">JNU Entrance Exam</div>
+                <div class="card-body">
+                    <p>For MA, MSc, and MPhil/PhD programs in social sciences and humanities.</p>
+                    <div class="exam-info">
+                        <p><span>Eligibility:</span> Bachelor's degree in relevant field.</p>
+                        <p><span>Course Duration:</span> 2 years (MA/MSc), 1-2 years (MPhil), 3-5 years (PhD).</p>
+                    </div>
+                    <button class="btn btn-success" onclick="window.open('https://www.jnu.ac.in/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Telangana State-Level Exams -->
+<div class="category telangana" data-category-title="Telangana State-Level Exams">
+    <h2 class="category-header">7. Telangana State-Level Exams</h2>
+    <div class="row">
+        <div class="col-md-4 col-sm-6">
+            <div class="card" data-job-title="TS ICET">
+                <div class="card-header">TS ICET</div>
+                <div class="card-body">
+                    <p>For MBA and MCA courses in Telangana state universities.</p>
+                    <div class="exam-info">
+                        <p><span>Eligibility:</span> Bachelor's degree from a recognized university.</p>
+                        <p><span>Course Duration:</span> 2 years (MBA/MCA).</p>
+                    </div>
+                    <button class="btn btn-success" onclick="window.open('https://icet.tsche.ac.in/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" data-job-title="CPGET">
+                <div class="card-header">CPGET</div>
+                <div class="card-body">
+                    <p>For PG courses in Telangana universities.</p>
+                    <div class="exam-info">
+                        <p><span>Eligibility:</span> Bachelor's degree in relevant field.</p>
+                        <p><span>Course Duration:</span> 2 years (Postgraduate Programs).</p>
+                    </div>
+                    <button class="btn btn-success" onclick="window.open('https://cpget.tsche.ac.in/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" data-job-title="TS PGECET">
+                <div class="card-header">TS PGECET</div>
+                <div class="card-body">
+                    <p>For MTech, MPharma, and other PG programs in Telangana.</p>
+                    <div class="exam-info">
+                        <p><span>Eligibility:</span> Bachelor's degree in relevant engineering, pharmacy, or related fields.</p>
+                        <p><span>Course Duration:</span> 2 years (MTech/MPharma), varies for other PG programs.</p>
+                    </div>
+                    <button class="btn btn-success" onclick="window.open('https://pgecet.tsche.ac.in/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Architecture -->
+<div class="category architecture" data-category-title="Architecture">
+    <h2 class="category-header">8. Architecture</h2>
+    <div class="row">
+        <div class="col-md-4 col-sm-6">
+            <div class="card" style="background-color: #E1BEE7;" data-job-title="NATA">
+                <div class="card-header">NATA</div>
+                <div class="card-body">
+                    <p>For BArch programs in various institutes.</p>
+                    <div class="exam-info">
+                        <p><span>Eligibility:</span> 10+2 with mathematics as a subject, or equivalent qualification.</p>
+                        <p><span>Course Duration:</span> 5 years (BArch).</p>
+                    </div>
+                    <button class="btn btn-success" onclick="window.open('https://www.nata.in/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" style="background-color: #E1BEE7;" data-job-title="JEE BArch">
+                <div class="card-header">JEE BArch</div>
+                <div class="card-body">
+                    <p>For BArch courses in IITs and other top institutes.</p>
+                    <div class="exam-info">
+                        <p><span>Eligibility:</span> 10+2 with mathematics as a subject, or equivalent qualification.</p>
+                        <p><span>Course Duration:</span> 5 years (BArch).</p>
+                    </div>
+                    <button class="btn btn-success" onclick="window.open('https://jeemain.nta.nic.in/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Design -->
+<div class="category design" data-category-title="Design">
+    <h2 class="category-header">9. Design</h2>
+    <div class="row">
+        <div class="col-md-4 col-sm-6">
+            <div class="card" style="background-color: #FFEBEE;" data-job-title="NID Entrance Exam">
+                <div class="card-header">NID Entrance Exam</div>
+                <div class="card-body">
+                    <p>For BDes and MDes programs at NID.</p>
+                    <div class="exam-info">
+                        <p><span>Eligibility:</span> 10+2 or equivalent for BDes; Bachelor's degree for MDes.</p>
+                        <p><span>Course Duration:</span> 4 years (BDes), 2 years (MDes).</p>
+                    </div>
+                    <button class="btn btn-success" onclick="window.open('https://www.nid.edu/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" style="background-color: #FFEBEE;" data-job-title="NIFT Entrance Exam">
+                <div class="card-header">NIFT Entrance Exam</div>
+                <div class="card-body">
+                    <p>For BDes and MDes programs in fashion design.</p>
+                    <div class="exam-info">
+                        <p><span>Eligibility:</span> 10+2 or equivalent for BDes; Bachelor's degree for MDes.</p>
+                        <p><span>Course Duration:</span> 4 years (BDes), 2 years (MDes).</p>
+                    </div>
+                    <button class="btn btn-success" onclick="window.open('https://www.nift.ac.in/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" style="background-color: #FFEBEE;" data-job-title="UCEED">
+                <div class="card-header">UCEED</div>
+                <div class="card-body">
+                    <p>For BDes courses at IITs.</p>
+                    <div class="exam-info">
+                        <p><span>Eligibility:</span> 10+2 or equivalent with Physics, Chemistry, and Mathematics.</p>
+                        <p><span>Course Duration:</span> 4 years (BDes).</p>
+                    </div>
+                    <button class="btn btn-success" onclick="window.open('https://uceed.iitb.ac.in/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Hotel Management & Tourism -->
+<div class="category hotel" data-category-title="Hotel Management & Tourism">
+    <h2 class="category-header">10. Hotel Management & Tourism</h2>
+    <div class="row">
+        <div class="col-md-4 col-sm-6">
+            <div class="card" style="background-color: #FFEBEE;" data-job-title="NCHM JEE">
+                <div class="card-header">NCHM JEE</div>
+                <div class="card-body">
+                    <p>For BHM and related programs in Hotel Management.</p>
+                    <div class="exam-info">
+                        <p><span>Eligibility:</span> 10+2 or equivalent from a recognized board.</p>
+                        <p><span>Course Duration:</span> 3 years (BHM).</p>
+                    </div>
+                    <button class="btn btn-success" onclick="window.open('https://nchmjee.nta.nic.in/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" style="background-color: #FFEBEE;" data-job-title="AIMA UGAT">
+                <div class="card-header">AIMA UGAT</div>
+                <div class="card-body">
+                    <p>For undergraduate programs in hotel management.</p>
+                    <div class="exam-info">
+                        <p><span>Eligibility:</span> 10+2 or equivalent from a recognized board.</p>
+                        <p><span>Course Duration:</span> 3 years (BHM and related programs).</p>
+                    </div>
+                    <button class="btn btn-success" onclick="window.open('https://www.aima.in/ugat', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Journalism & Mass Communication -->
+<div class="category journalism" data-category-title="Journalism & Mass Communication">
+    <h2 class="category-header">11. Journalism & Mass Communication</h2>
+    <div class="row">
+        <div class="col-md-4 col-sm-6">
+            <div class="card" style="background-color: #FFF3E0;" data-job-title="IIMC Entrance Exam">
+                <div class="card-header">IIMC Entrance Exam</div>
+                <div class="card-body">
+                    <p>For Journalism and Mass Communication programs.</p>
+                    <div class="exam-info">
+                        <p><span>Eligibility:</span> Bachelor's degree in any stream.</p>
+                        <p><span>Course Duration:</span> 2 years (Postgraduate programs).</p>
+                    </div>
+                    <button class="btn btn-success" onclick="window.open('https://www.iimc.nic.in/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" style="background-color: #FFF3E0;" data-job-title="FTII Entrance Exam">
+                <div class="card-header">FTII Entrance Exam</div>
+                <div class="card-body">
+                    <p>For filmmaking, acting, and related programs.</p>
+                    <div class="exam-info">
+                        <p><span>Eligibility:</span> Bachelor's degree in any stream; specific requirements for different courses.</p>
+                        <p><span>Course Duration:</span> 1-3 years (depending on the program).</p>
+                    </div>
+                    <button class="btn btn-success" onclick="window.open('https://www.ftiindia.com/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" style="background-color: #FFF3E0;" data-job-title="XIC OET">
+                <div class="card-header">XIC OET</div>
+                <div class="card-body">
+                    <p>For mass communication programs.</p>
+                    <div class="exam-info">
+                        <p><span>Eligibility:</span> 10+2 or equivalent for undergraduate programs; Bachelor's degree for postgraduate programs.</p>
+                        <p><span>Course Duration:</span> 3 years (UG programs), 2 years (PG programs).</p>
+                    </div>
+                    <button class="btn btn-success" onclick="window.open('https://www.xaviercomm.org/', '_blank')">Visit Website</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Exam Information. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function filterExams() {
+            const query = document.getElementById('search-bar').value.toLowerCase();
+            const categories = document.querySelectorAll('.category');
+            let foundAny = false;
+
+            categories.forEach(category => {
+                const categoryTitle = category.getAttribute('data-category-title').toLowerCase();
+                const cards = category.querySelectorAll('.card');
+                let categoryMatches = false;
+
+                cards.forEach(card => {
+                    const examTitle = card.getAttribute('data-job-title').toLowerCase();
+                    if (categoryTitle.includes(query) || examTitle.includes(query)) {
+                        card.style.display = 'block'; // Show matching exam
+                        categoryMatches = true;
+                        foundAny = true;
+                    } else {
+                        card.style.display = 'none'; // Hide non-matching exam
+                    }
+                });
+
+                // Show or hide category based on whether any exams match
+                if (categoryMatches || categoryTitle.includes(query)) {
+                    category.style.display = 'block';
+                } else {
+                    category.style.display = 'none';
+                }
+            });
+
+            // Show or hide "No results found" message
+            const noResultsMessage = document.getElementById('no-results');
+            if (foundAny) {
+                noResultsMessage.style.display = 'none';
+            } else {
+                noResultsMessage.style.display = 'block';
+            }
+        }
+    </script>
+
+</body>
+</html>
