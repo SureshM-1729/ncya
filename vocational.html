@@ -15,6 +15,7 @@
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <!-- Custom CSS -->
     <style>
@@ -172,36 +173,54 @@
     color: #777; /* Lighter color for placeholder text */
     font-size: 16px;
 }
+ .marquee {
+            font-size: 15px;
+            color: yellow;
+            padding: 2px;
+            text-align: center;
+            animation: blink 2s step-start infinite;
+        }
         
-        
+         /* Google Translate Element Styling */
+        #google_translate_element {
+            display: inline-block;
+            padding: 3px 8px; /* Reduce padding */
+            border-radius: 5px;
+            font-size: 12px; /* Reduce font size */
+            cursor: pointer;
+            margin-left: 10px; /* Space between language and other items */
+        }
+
+        /* Styling the select dropdown box */
+        .goog-te-combo {
+             margin-top:2px;
+            vertical-align:top;
+            display:inline-block;
+            max-width:10px;
+        }
+        .goog-te-gadget-simple .goog-te-menu-value span {
+    display: none;
+}
+
     </style>
 </head>
 
 <body>
 
-    <!-- Page Header -->
-    <header1 role="banner" style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background-color: blue; color: blue;border: 3px solid white;">
-        <div class="header-image" style="flex-shrink: 0;">
-            <img src="assets\Images\temple.jpg" alt="Description of image" style="height: 50px; width: auto; border-radius: 30px;">
-        </div>
-        
-        <div class="title" style="flex: 2; text-align: center; font-size: 14px; color: white;">NAVA CHAITHANYA YUVAJANA ASSOCIATION</div>
-        <div class="header-image" style="flex-shrink: 0;">
-            <img src="assets\Images\ncyaLogo.jpg" alt="Description of image" style="height: 50px; width: auto; border-radius: 60px;">
-        </div>
-    </header1>
-
     <div class="header-topp">
         <div class="header-top-left">
-            <strong style='color: white;'>SURESH MYATHARI <i class="fas fa-smile" style='font-size: 20px; color: yellow'></i></strong>
+            <strong style='color: white;'>CAREER-NAVIGATION </strong>
         </div>
         <div class="marquee">
-            <strong>Welcome to Vocational Courses Check out our latest updates and more.</strong>
+            <strong>VOCATIONAL COURSES</strong>
         </div>
-        <div class="header-top-right">
-            <a href="ncya.html" class="link">Home</a> 
-            <a href="index.html" class="link">Logout</a>
-        </div>
+        <div class="menu-right">
+        <a href="index.html" class="link">
+            <i class="fas fa-home"></i> Home
+        </a>
+        &nbsp;&nbsp;
+          <div id="google_translate_element"></div> 
+    </div>
     </div>
      
 
@@ -494,13 +513,10 @@
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer role="contentinfo" style="display: flex; justify-content: space-between; align-items: center; font-size: 0.9em;">
-        <p style="margin: 0;">Developed by Suresh Myathari</p>
-        <span style="display: flex; align-items: center;">
-            <span>&copy; 2024 N C Y A. All rights reserved.</span>
-        </span>
-    </footer>
+    <footer role="contentinfo" style="display: flex; justify-content: center; align-items: center; font-size: 0.9em; text-align: center; width: 100%; padding: 10px 0;">
+    <span>&copy; 2024 Career Navigation All rights reserved.</span>
+</footer>
+    
 
     <!-- Bootstrap JS and Popper -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
@@ -518,6 +534,13 @@
                     courses[i].style.display = 'none';
                 }
             }
+        }
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,te,hi,fr,de,es,zh,ta,ml,ur,ja',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
         }
     </script>
 

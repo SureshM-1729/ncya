@@ -7,6 +7,7 @@
     <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" tyep="text/css" href="style.css" />
+	 <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <title>Exams and Eligibility</title>
     <style>
         body {
@@ -60,11 +61,15 @@
             flex-grow: 1;
         }
         footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #333;
+             background: #0056b3;
             color: white;
-            margin-top: 40px;
+            text-align: center;
+            padding: 15px;
+            font-size: 1rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            border: 3px solid white;
         }
         .category .card:hover {
             transform: translateY(-10px);
@@ -170,21 +175,57 @@
             text-decoration: none;
             margin: 0 10px;
         }
+        
+         /* Google Translate Element Styling */
+        #google_translate_element {
+            display: inline-block;
+            padding: 3px 8px; /* Reduce padding */
+            border-radius: 5px;
+            font-size: 12px; /* Reduce font size */
+            cursor: pointer;
+            margin-left: 10px; /* Space between language and other items */
+        }
+
+        /* Styling the select dropdown box */
+        .goog-te-combo {
+             margin-top:2px;
+            vertical-align:top;
+            display:inline-block;
+            max-width:10px;
+        }
+        .goog-te-gadget-simple .goog-te-menu-value span {
+    display: none;
+}
+
+.goog-te-gadget-simple {
+    width: 160px; /* Set the width for the circle */
+    height: 30px; /* Set the height for the circle */
+    overflow: hidden;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f1f1f1; /* Optional: Add background color */
+    font-size: 12px; /* Adjust font size to fit */
+}
     </style>
 </head>
 <body>
 
         <div class="header-topp">
         <div class="header-top-left">
-            <strong style='color: white;'>SURESH MYATHARI <i class="fas fa-smile" style='font-size: 20px; color: yellow'></i></strong>
+            <strong style='color: white;'>CAREER-NAVIGATION</strong>
         </div>
         <div class="marquee">
-            <strong>After Intermediate Entrance Exams! Check out our latest updates and more.</strong>
+            <strong>After Intermediate Entrance Exams!</strong>
         </div>
-        <div class="header-top-right">
-            <a href="ncya.html" class="link">Home</a> 
-            <a href="index.html" class="link">Logout</a>
-        </div>
+       <div class="menu-right">
+        <a href="index.html" class="link">
+            <i class="fas fa-home"></i> Home
+        </a>
+        &nbsp;&nbsp;
+          <div id="google_translate_element"></div> 
+    </div>
     </div>
 
     <div class="search-container">
@@ -682,9 +723,9 @@
 
     </section>
 
-    <footer>
-        <p>&copy; 2024 Exam Information. All rights reserved.</p>
-    </footer>
+    <footer role="contentinfo" style="display: flex; justify-content: center; align-items: center; font-size: 0.9em; text-align: center; width: 100%; padding: 10px 0;">
+    <span>&copy; 2024 Career Navigation All rights reserved.</span>
+</footer>
 
     <script>
         function filterExams() {
@@ -723,6 +764,14 @@
             } else {
                 noResultsMessage.style.display = 'block';
             }
+        }
+        
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,te,hi,fr,de,es,zh,ta,ml,ur,ja',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
         }
     </script>
 
